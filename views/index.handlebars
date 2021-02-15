@@ -2,8 +2,11 @@
 <head>
 	<title>Lingua: Learning</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/index.css">
-	
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -15,38 +18,39 @@
   <li id="profile"><a href="/profile"><img src="images/profile.svg"></a></li>
 </ul>
 
-<h2>Progress: beginner</h2>
-<progress id="file" value="32" max="100"> 32% </progress>
-<label for="file">16/50</label>
-<br>
-<h2>Quizzes (new/in-progress)</h2>
-<div style="height:200px;width:350px;border:1px solid #ccc;overflow:auto;">
-  <a href="">Quiz 1: Introduce Yourself</a> <br>
-  <button type="button">Click Me!</button> <br>
-  <button type="button">Click Me!</button> <br>
-  <button type="button">Click Me!</button><br>
-  <button type="button">Click Me!</button><br>
-  <button type="button">Click Me!</button><br>
-  <button type="button">Click Me!</button><br>
-  <button type="button">Click Me!</button><br>
-  <button type="button">Click Me!</button>
+<div class="content">
+<h3>Progress: beginner</h2>
+<div class="progress" style="width:90%">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+  16/50 points
+  </div>
 </div>
-
-<!--{{#each projects}}
-	<div class="quiz" id="{{id}}">
-		<div class="thumbnail">
-			<a href="#">
-				<p>{{name}}</p>
-        <img src="images/{{image}}" alt="go button" class="img">
-			</a>
-			<div class="details"></div>
-		</div>
-	</div>
-{{/each}}-->
-
-<h2>Completed Quizzes</h2>
-<div style="height:150px;width:350px; border:1px solid #ccc;overflow:auto;">
-You haven't completed any quizzes!
 <br>
+<h3>Lessons (new/in-progress)</h2>
+<div style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+  {{#each newquiz}}
+  <div class="container" id="{{id}}">
+    <a href="">
+      <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
+      <p class="centered">{{name}}</p>
+    </a>
+  </div>
+  {{/each}}
+</div>
+<br>
+<h3>Completed Lessons</h2>
+<div style="height:140px;width:330px; border:1px solid #ccc;overflow:auto;">
+<!--You haven't completed any quizzes!-->
+  {{#each oldquiz}}
+  <div class="container" id="{{id}}">
+    <a href="">
+      <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
+      <p class="centered">{{name}}</p>
+    </a>
+  </div>
+  {{/each}}
+<br>
+</div>
 </body>
 </html>
