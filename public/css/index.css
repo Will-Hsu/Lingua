@@ -14,10 +14,20 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 6px;
+  padding-top: 7px;
   text-decoration: none;
 }
 
 li a:hover {
   background-color: #111;
 }
+
+#logo{
+  padding: 10px 6px;
+}
+
+#logo a:hover{
+  background-color: #333;
+}
+
