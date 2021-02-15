@@ -17,9 +17,33 @@
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
-<h3>Proficiency Specific Chatrooms</h2>
-<br>
-<h3>General Chatrooms</h2>
+<div class="content">
+  <h3>Proficiency Specific Chatrooms</h3>
+  <div style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+  {{#each proficiency}}
+  <div class="container" id="{{id}}">
+    <a href="">
+      <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
+      <p class="centered">{{name}}</p>
+    </a>
+  </div>
+  {{/each}}
+</div>
+  <br>
+  <h3>General Chatrooms</h3>
+  <div style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+  {{#each generalChat}}
+  <div class="container" id="{{id}}">
+    <a href="">
+      <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
+      <p class="centered">{{name}}
+        <p id="desc">{{description}}</p> 
+      </p>
+    </a>
+  </div>
+  {{/each}}
+</div>
+</div>
 <br>
 
 </body>
