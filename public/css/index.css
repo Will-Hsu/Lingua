@@ -75,3 +75,10 @@ img{
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; 
   font-size: 12px; font-style: normal; font-variant: normal; font-weight: 10; line-height: 10px;
 }
+
+#popupquiz{
+  position: fixed; /* or absolute */
+  top: 28%;
+  background-color: #111;
+  display: none;
+}

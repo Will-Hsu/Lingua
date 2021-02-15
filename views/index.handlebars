@@ -27,10 +27,11 @@
 </div>
 <br>
 <h3>Lessons (new/in-progress)</h2>
+<div>
 <div id="lessons" style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
   {{#each newquiz}}
   <div class="container" id="{{id}}">
-    <a href="" onclick="clickOn({{id}})">
+    <a href="" onclick="clickOn(event, {{id}})">
       <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
       <p class="centered">{{name}}</p>
     </a>
@@ -38,15 +39,16 @@
   {{/each}}
 </div>
 
-<div id="popupquiz" style="visibility: hidden; height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+<div id="popupquiz" style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
   Quiz content
   <button>enter</button>
 </div>
+</div>
 
 <script>
-  function clickOn(id){
-    document.getElementById("popupquiz").style.visibility = 'visible';
-    document.getElementById("lessons").style.visibility = 'hidden';
+  function clickOn(e, id){
+    document.getElementById("popupquiz").style.display = 'block';
+    e.preventDefault();
   }
 </script>
 
