@@ -95,4 +95,17 @@ img{
   top: 30%;
   background-color: white;
   display: none;
+  height:210px;width:330px;background-color:grey;overflow:auto; border-radius: 20px;
+}
+
+#innerquiz{
+  height:190px;width:310px;background-color:white;overflow:auto; border-radius: 20px;
+  margin-left: 3.3%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+#innerquiz p{
+  margin-left: 5%;
+  margin-right: 5%;
 }

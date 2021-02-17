@@ -18,11 +18,13 @@
 </ul>
 
 <div class="content">
+  <br><br>
+  <div class="toggle">
   <h3>Proficiency Specific Chatrooms</h3>
-  <div style="height:245px;width:330px;border:1px solid #ccc;overflow:auto;">
+  <div style="height:190px;width:330px;border:1px solid #ccc;overflow:auto;">
   {{#each proficiency}}
   <div class="container" id="{{id}}">
-    <a href="">
+    <a href=""  onclick="clickOn(event, {{id}})">
       <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
       <p class="centered">{{name}}</p>
     </a>
@@ -31,10 +33,10 @@
 </div>
   <br>
   <h3>General Chatrooms</h3>
-  <div style="height:245px;width:330px;border:1px solid #ccc;overflow:auto;">
+  <div style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
   {{#each generalChat}}
   <div class="container" id="{{id}}">
-    <a href="">
+    <a href=""  onclick="clickOn(event, {{id}})">
       <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
       <div class="centered2">
         {{name}}
@@ -46,6 +48,31 @@
 </div>
 </div>
 <br>
+</div>
+
+<div id="popupquiz" style="left:6%">
+  <div id="innerquiz">
+    <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br><br><br><br>
+    <h3>🏫 Beginner Grammar</h3><br>
+    <p>Objective: Learn and Practice Introductory Spanish Grammar</p>
+    <a href="/chat"><button type="button" class="btn btn-success">Enter</button></a>
+  </div>
+</div>
+
+<script>
+  function clickOn(e, id){
+    var toggle = document.getElementsByClassName('toggle');
+    for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
+    document.getElementById("popupquiz").style.display = 'block';
+    e.preventDefault();
+  }
+  function clickOff(e){
+    var toggle = document.getElementsByClassName('toggle');
+    for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'block';
+    document.getElementById("popupquiz").style.display = 'none';
+    e.preventDefault();
+  }
+</script>
 
 </body>
 </html>

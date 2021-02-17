@@ -17,11 +17,7 @@ exports.view = function(req, res){
       { 	'name': '🏫 Beginner Writing',
         'image': 'enter.svg',
         'id': 'beginWriting'
-      },
-      { 	'name': '🏫 Beginner Reading',
-        'image': 'enter.svg',
-        'id': 'beginRead'
-      } 	
+      }	
     ], 
     'generalChat':[
       { 	'name': '🌮 Foods',

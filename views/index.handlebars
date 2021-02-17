@@ -38,11 +38,16 @@
     </div>
     {{/each}}
   </div>
+</div>
 
-  <div id="popupquiz" style="height:255px;width:330px;border:1px solid #ccc;overflow:auto;">
-    Quiz content
-    <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
-    <button>enter</button>
+
+<div id="popupquiz">
+  <div id="innerquiz">
+    <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br>
+    <h3>Beginner Lesson 1</h3>
+    <h4>Introduce Yourself</h4><br>
+    <p>Objective: Practice how to introduce yourself and say hello in Spanish!</p>
+    <a href="/lesson"><button type="button" class="btn btn-success">Enter</button></a>
   </div>
 </div>
 
@@ -53,6 +58,12 @@
     document.getElementById("popupquiz").style.display = 'block';
     e.preventDefault();
   }
+  function clickOff(e){
+    var toggle = document.getElementsByClassName('toggle');
+    for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'block';
+    document.getElementById("popupquiz").style.display = 'none';
+    e.preventDefault();
+  }
 </script>
 
 <br>
@@ -61,7 +72,7 @@
 <!--You haven't completed any quizzes!-->
   {{#each oldquiz}}
   <div class="container" id="{{id}}">
-    <a href="">
+    <a href="" onclick="clickOn(event, {{id}})">
       <img src="images/{{image}}" style="filter: grayscale(100%)" alt="enter lesson">
       <p class="centered">{{name}}</p>
     </a>
