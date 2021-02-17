@@ -16,6 +16,18 @@
   <li><a><img src="images/help_fill.svg" class="img-responsive"></a></li>
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
 </ul>
-Help Page
+
+<div class="content">
+  <h3 class="toggle">FAQ's</h3>
+  <div style="height:80%;width:330px;background-color: white; overflow:auto;">
+    {{#each questionPage}}
+    <div class="container_questions" id="{{id}}">
+      <p class="centered">{{question}} <br><br> {{answer}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
 </body>
 </html>

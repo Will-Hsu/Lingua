@@ -57,6 +57,15 @@ li a:hover {
   width: 50%;
 }
 
+.container_questions {
+  padding: 5%;
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 50%;
+  height: 120px;
+}
+
 .centered {
   position: absolute;
   top: 15;
