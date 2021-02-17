@@ -92,7 +92,7 @@ img{
 
 #popupquiz{
   position: fixed; /* or absolute */
-  top: 28%;
-  background-color: #111;
+  top: 30%;
+  background-color: white;
   display: none;
 }
