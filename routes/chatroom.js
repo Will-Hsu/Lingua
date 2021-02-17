@@ -31,7 +31,7 @@ exports.view = function(req, res){
       },
       { 	'name': '✈️ Travel',
         'image': 'enter.svg',
-        'description': 'Chat about travel stories and recommendations',
+        'description': 'Chat about travel stories/recommendations',
         'id': 'travelChat'
       },
       { 	'name': '🖼 Arts & Culture',
