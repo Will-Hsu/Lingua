@@ -10,9 +10,9 @@
 <body>
 
 <ul>
-  <li id="logo"><a><img src="images/logo.svg" class="img-responsive" style="filter: grayscale(100%)"></a></li>
+  <li id="logo"><a><img src="images/logo.svg" class="img-responsive"></a></li>
   <li><a href="/"><img src="images/learn.svg" class="img-responsive"></a></li>
-  <li><a><img src="images/chat.svg" class="img-responsive"></a></li>
+  <li><a><img src="images/chat_fill.svg" class="img-responsive"></a></li>
   <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
 </ul>
@@ -21,7 +21,7 @@
   <br><br>
   <div class="toggle">
   <h3>Proficiency Specific Chatrooms</h3>
-  <div style="height:190px;width:330px;border:1px solid #ccc;overflow:auto;">
+  <div style="height:190px;width:330px;background-color: white; overflow:auto;">
   {{#each proficiency}}
   <div class="container" id="{{id}}">
     <a href=""  onclick="clickOn(event, {{id}})">
@@ -33,7 +33,7 @@
 </div>
   <br>
   <h3>General Chatrooms</h3>
-  <div style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+  <div style="height:250px;width:330px;background-color: white; overflow:auto;">
   {{#each generalChat}}
   <div class="container" id="{{id}}">
     <a href=""  onclick="clickOn(event, {{id}})">
@@ -53,7 +53,7 @@
 <div id="popupquiz" style="left:6%">
   <div id="innerquiz">
     <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br><br><br><br>
-    <h3>🏫 Beginner Grammar</h3><br>
+    <h4>🏫 Beginner Grammar</h4><br>
     <p>Objective: Learn and Practice Introductory Spanish Grammar</p>
     <a href="/chat"><button type="button" class="btn btn-success">Enter</button></a>
   </div>

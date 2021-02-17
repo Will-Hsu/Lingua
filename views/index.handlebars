@@ -11,7 +11,7 @@
 
 <ul>
   <li id="logo"><a><img src="images/logo.svg" class="img-responsive"></a></li>
-  <li><a><img src="images/learn.svg" class="img-responsive"></a></li>
+  <li><a><img src="images/learn_fill.svg" class="img-responsive"></a></li>
   <li><a href="/chatroom"><img src="images/chat.svg" class="img-responsive"></a></li>
   <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
@@ -28,7 +28,7 @@
 <br>
 <h3 class="toggle">Lessons (new/in-progress)</h2>
 <div>
-  <div class = "toggle" id="lessons" style="height:250px;width:330px;border:1px solid #ccc;overflow:auto;">
+  <div class = "toggle" id="lessons" style="height:250px;width:330px;background-color: white;overflow:auto;">
     {{#each newquiz}}
     <div class="container" id="{{id}}">
       <a href="" onclick="clickOn(event, {{id}})">
@@ -44,7 +44,7 @@
 <div id="popupquiz">
   <div id="innerquiz">
     <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br>
-    <h3>Beginner Lesson 1</h3>
+    <h4 style="margin-left:15%">Beginner Lesson 1</h4>
     <h4>Introduce Yourself</h4><br>
     <p>Objective: Practice how to introduce yourself and say hello in Spanish!</p>
     <a href="/lesson"><button type="button" class="btn btn-success">Enter</button></a>
@@ -68,7 +68,7 @@
 
 <br>
 <h3 class="toggle">Completed Lessons</h2>
-<div class = "toggle"style="height:140px;width:330px; border:1px solid #ccc;overflow:auto;">
+<div class = "toggle"style="height:140px;width:330px; background-color: white; overflow:auto;">
 <!--You haven't completed any quizzes!-->
   {{#each oldquiz}}
   <div class="container" id="{{id}}">
