@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/help.css">
 </head>
 <body>
 
@@ -23,7 +24,8 @@
   <div style="height:80%;width:330px;background-color: white; overflow:auto;">
     {{#each questionPage}}
     <div class="container_questions" id="{{id}}">
-      <p class="centered">{{question}} <br><br> {{answer}}</p>
+      <p>{{question}}</p> 
+      <p id="answer"><br>{{answer}}</p>
     </div>
     {{/each}}
   </div>
