@@ -3,10 +3,13 @@
 	<title>Lingua: Profile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg" href="/images/favicon.svg"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
 
@@ -18,24 +21,35 @@
   <li id="profile"><a><img src="images/profile_fill.svg" class="img-responsive"></a></li>
 </ul>
 
-<div class="content">
-  <br><br>
+<div>
+
   <!-- Insert FB image here -->
-  <img src="https://media.giphy.com/media/JU3wJzTin54XiXGgVR/giphy.gif" style="height: 30%; width: 50%; display:block; margin-left: auto; margin-right: auto;">
+  <img src="https://media.giphy.com/media/JU3wJzTin54XiXGgVR/giphy.gif" id= "profilepic">
   <div class="toggle">
-  <h3 style="width: 35%; display:block; margin-left: auto; margin-right: auto;">Your Username</h3> <!-- Insert FB name here?-->
-  <div style="height:30%;width:330px;background-color: white; overflow:auto;">
   
+  <h3 id="name">Spiderman</h3> <!-- Insert FB name here?-->
+
+  <div style="height:30%;width:300px;background-color: white; overflow:auto;">  
 
   <!-- Display Proficiency level -->
-  <p>Proficiency Level: beginner<p>
-  <button type="button">Change Proficiency</button>
-  
-  <br><br><br><br>
-  <button type="button" style="width: 35%; display:block; margin-left: auto; margin-right: auto;">Logout</button>
+  <div class="options">
+    <h4>Proficiency Level: <a id="level">beginner </a></h4>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div> <br>
+    
+    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+  </div>
   <!-- Change Proficiency level + pop-up -->
   <!-- Logout button + pop-up -->
-
 </div>
 
 </body>

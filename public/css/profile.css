@@ -1,0 +1,27 @@
+#profilepic{
+  height: 30%; width: 50%; display:block; margin-left: auto; margin-right: auto;
+  padding: 5%;
+  margin-top: 8%;
+}
+
+#name{
+  display:block; margin-left: auto; margin-right: auto;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 5%;
+}
+
+div{
+margin-left: auto;
+margin-right: auto;
+}
+
+#level{
+  font-style: italic;
+  color: black;
+  font-weight: normal;
+}
+
+.options{
+  margin: 5%;
+}
