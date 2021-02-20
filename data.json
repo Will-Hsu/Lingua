@@ -1,0 +1,61 @@
+{
+	"users": [
+		{
+			"name": "Doug Engelbart",
+			"proficiency": "beginner",
+			"progress": "16/50",
+			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Douglas_Engelbart_in_2008.jpg/972px-Douglas_Engelbart_in_2008.jpg"			
+		},
+		{
+			"name": "Ivan Sutherland",
+			"proficiency": "intermediate",
+			"progress": "16/50",
+			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"			
+		},
+		{
+			"name": "Lucy Suchman",
+			"proficiency": "advanced",
+			"progress": "16/50",
+			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg"			
+		}
+	],
+
+	"quizIntro": [
+		{
+			"question": "How do you say 'hello' in Spanish?",
+			"choice1": "Hola",
+			"choice2": "Aqua",
+			"choice3": "Pan",
+			"answer": "Hola"	
+		}
+
+	],
+
+	"BeginnerConvChat": [
+		{
+			"name": "Ivan",
+			"image": "images/Ivan.png",
+			"text":	"Mi nombre es Iván pero puedes llamarme Iván el Mayor",
+			"time": "11:00"
+		},
+		{
+			"name": "Lucy",
+			"image": "images/Lucy.png",
+			"text":	"Hola! mi nombre es Lucy!",
+			"time": "11:03"
+		},
+		{
+			"name": "Ivan",
+			"image": "images/Ivan.png",
+			"text":	"Hola Lucy, como estas?",
+			"time": "11:05"
+		},
+		{
+			"name": "Lucy",
+			"image": "images/Lucy.png",
+			"text":	"Lo estoy haciendo bien",
+			"time": "11:07"
+		}
+
+	]
+}
