@@ -7,17 +7,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/login.css">
+  {{> facebook}}
+	<script src="/js/facebook.js"></script>
 </head>
 <body>
 
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=2419149194896926&autoLogAppEvents=1" nonce="ZO2dYvL6"></script>
+
+  <div class = "content">
   <img src="images/logo.svg" class="logo">
-  <!--<form action="/action_page.php">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username"><br><br>
-    <label for="pass">Password:</label>
-    <input type="text" id="pass" name="pass"><br><br>
-    <input type="submit" value="Login">
-  </form>-->
+  <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+  <a href="/"><button type="button" class="btn btn-dark" id="auth-free">Auth-free Login</button></a>
+  </div>
     
 </body>
 </html>
