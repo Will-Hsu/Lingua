@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="/js/profile.js"></script>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/profile.css">
 </head>
@@ -35,9 +36,9 @@
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Change Proficiency ▾</button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#">Beginner</a>
-        <a href="#">Intermediate</a>
-        <a href="#">Advanced</a>
+        <a href="#" onclick="changeLevel(event, 'beginner')">Beginner</a>
+        <a href="#" onclick="changeLevel(event, 'intermediate')">Intermediate</a>
+        <a href="#" onclick="changeLevel(event, 'advanced')">Advanced</a>
       </div>
     </div><br><br><br>
 
@@ -46,40 +47,12 @@
   </div>
     <a href="/login" class="floated"><button type="button" class="btn btn-success" style="display: none; margin-left: 10px;" id="button-logout">Confirm</button></a>
     <a href="/profile" class="floated"><button type="button" class="btn btn-light" style="display: none;" id="button-logout2">Cancel</button></a>
-
+    <a href="/profile" class="floated"><button type="button" class="btn btn-success" style="display: none; margin-left: 10px;" id="changeProf1">Confirm</button></a>
+    <a href="/profile" class="floated"><button type="button" class="btn btn-light" style="display: none;" id="changeProf2">Cancel</button></a>
 
   <!-- Change Proficiency level + pop-up -->
   <!-- Logout button + pop-up -->
 </div>
 
-
-<script>
-
-function clickOn(e){
-  var projectHTML = "<p id='logout-confirmation' style = 'color:#911906;'> Are you sure you want to logout?</p>";
-	$(".replace").html(projectHTML);
-  document.getElementById("button-logout").style.display = 'block';
-  document.getElementById("button-logout2").style.display = 'block';
-  e.preventDefault();
-}
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 </body>
 </html>
