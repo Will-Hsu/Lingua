@@ -16,6 +16,8 @@ var profile = require('./routes/profile');
 var chat = require('./routes/chat');
 var lesson = require('./routes/lesson');
 var login = require('./routes/login');
+var add = require('./routes/add');
+
 
 var app = express();
 
@@ -47,6 +49,7 @@ app.get('/profile', profile.view);
 app.get('/lesson', lesson.view);
 app.get('/chat', chat.view);
 app.get('/login', login.view);
+app.get('/add', add.sendMessage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

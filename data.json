@@ -35,26 +35,38 @@
 		{
 			"name": "Ivan",
 			"image": "images/Ivan.png",
-			"text":	"Mi nombre es Iván pero puedes llamarme Iván el Mayor",
-			"time": "11:00"
+			"text":	"Let's introduce ourselves in Spanish. Mi nombre es Iván pero puedes llamarme Iván el Mayor",
+			"time": "11:00",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
 		},
 		{
 			"name": "Lucy",
 			"image": "images/Lucy.png",
-			"text":	"Hola! mi nombre es Lucy!",
-			"time": "11:03"
+			"text":	"Okay. Hola! mi nombre es Lucy!",
+			"time": "11:03",
+			"theme": "container darker",
+			"imgPos" : "right", 
+			"timePos": "time-left"
 		},
 		{
 			"name": "Ivan",
 			"image": "images/Ivan.png",
 			"text":	"Hola Lucy, como estas?",
-			"time": "11:05"
+			"time": "11:05",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
 		},
 		{
 			"name": "Lucy",
 			"image": "images/Lucy.png",
 			"text":	"Lo estoy haciendo bien",
-			"time": "11:07"
+			"time": "11:07",
+			"theme": "container darker",
+			"imgPos" : "right", 
+			"timePos": "time-left"
 		}
 
 	]
