@@ -17,6 +17,19 @@
   <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
 </ul>
-Lesson Page
+
+ {{#each generalChat}}
+  <div class="container" id="{{id}}">
+    <a href=""  onclick="clickOn(event, {{id}})">
+      <img src="images/{{image}}" alt="enter lesson">
+      <div class="centered2">
+        {{name}}
+        <p id="desc">{{description}}</p> 
+      </div>
+    </a>
+  </div>
+  {{/each}}
+
+
 </body>
 </html>

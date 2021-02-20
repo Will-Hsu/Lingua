@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
 
@@ -17,6 +18,35 @@
   <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
   <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
 </ul>
-  Chat Page
+
+<div id = "chatroom_container">
+  <h2 style="color: white;">Chat Messages</h2>
+
+  <div class="container">
+    <img src="images/Ivan.png" alt="Ivan" style="width:100%;">
+    <p id="text">Mi nombre es Iván pero puedes llamarme Iván el Mayor</p>
+    <span class="time-right">11:00</span>
+  </div>
+
+  <div class="container darker">
+    <img src="images/Lucy.png" alt="Lucy" class="right" style="width:100%;">
+    <p id="text">Hola! mi nombre es Lucy!</p>
+    <span class="time-left">11:01</span>
+  </div>
+
+  <div class="container">
+    <img src="images/Ivan.png" alt="Ivan" style="width:100%;">
+    <p id="text">Hola Lucy, como estas?</p>
+    <span class="time-right">11:02</span>
+  </div>
+
+  <div class="container darker">
+    <img src="images/Lucy.png" alt="Lucy" class="right" style="width:100%;">
+    <p id="text">Lo estoy haciendo bien</p>
+    <span class="time-left">11:05</span>
+  </div>
+</div>>
+
+
 </body>
 </html>
