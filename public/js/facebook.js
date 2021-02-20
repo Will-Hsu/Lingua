@@ -16,14 +16,28 @@ function statusChangeCallback(response) {
           console.log('Successfully logged in with Facebook');
            FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
     }
+
   }
 // testing
 //Add this callback at bottom of facebook.js and add the required functionality in it 
 function changeUser(response) {
-    // hide the fb login button
-    $(".facebookLogin").hide();
-    // Change 'Scott Klemmer' to your name
-    $("#name").text(response.name);
-    // set your photo as the profile pic
-    $("#photo").attr("src", response.picture.data.url);
+  var newMessage = {
+    "name": response.name,
+    "proficiency": "beginner",
+    "progress": "0/50",
+    "imageURL": response.picture.data.url			
+  }
+  $.post("/user", newMessage, callBackFn);
+
+  //data.BeginnerConvChat.push(newMessage);
+  window.location.href = "/index";
+
+  //console.log(data["currentUser"]);
+    
+  // hide the fb login button
+  /*$(".facebookLogin").hide();
+  // Change 'Scott Klemmer' to your name
+  $("#name").text(response.name);
+  // set your photo as the profile pic
+  $("#photo").attr("src", response.picture.data.url);*/
 }

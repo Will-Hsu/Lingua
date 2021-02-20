@@ -17,6 +17,7 @@ var chat = require('./routes/chat');
 var lesson = require('./routes/lesson');
 var login = require('./routes/login');
 var add = require('./routes/add');
+var user = require('./routes/user');
 
 
 var app = express();
@@ -41,15 +42,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/index', index.view);
 // Example route
 app.get('/chatroom', chatroom.view);
 app.get('/help', help.view);
 app.get('/profile', profile.view);
 app.get('/lesson', lesson.view);
 app.get('/chat', chat.view);
-app.get('/login', login.view);
+app.get('/', login.view);
 app.get('/add', add.sendMessage);
+app.get('/user', user.addUser);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
