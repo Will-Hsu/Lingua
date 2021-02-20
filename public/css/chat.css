@@ -20,17 +20,22 @@
 }
 
 .darker {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
   border-color: #ccc;
   background-color: #ddd;
 }
 
-.container::after {
+.container::after, .darker::after{
   content: "";
   clear: both;
   display: table;
 }
 
-.container img {
+.container img, .darker img{
   float: left;
   max-width: 60px;
   width: 100%;
@@ -38,7 +43,7 @@
   border-radius: 50%;
 }
 
-.container img.right {
+.container img.right, .darker img.right{
   float: right;
   margin-left: 20px;
   margin-right:0;
