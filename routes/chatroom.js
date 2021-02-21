@@ -14,7 +14,7 @@ exports.view = function(req, res){
         'image': 'enter.svg',
         'id': 'beginConv'
       },
-      { 	'name': '🏫 Beginner Writing',
+      { 	'name': '🏫 Beginner Vocabulary',
         'image': 'enter.svg',
         'id': 'beginWriting'
       }	
@@ -30,7 +30,7 @@ exports.view = function(req, res){
         'description': 'Chat about travel stories/recommendations',
         'id': 'travelChat'
       },
-      { 	'name': '🖼 Arts & Culture',
+      { 	'name': '🖼 Arts and Culture',
         'image': 'enter.svg',
         'description': 'Chat about Arts and Culture',
         'id': 'artsChat'

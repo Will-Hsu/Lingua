@@ -24,10 +24,10 @@
   <h3>Proficiency Specific Chatrooms</h3>
   <div style="height:190px;width:330px;background-color: white; overflow:auto;">
   {{#each proficiency}}
-  <div class="container" id="{{id}}">
-    <a href=""  onclick="clickOn(event, {{id}})">
+  <div class="container" id="{{name}}">
+    <a href=""  onclick="clickOn(event, this)">
       <img src="images/{{image}}" alt="enter lesson">
-      <p class="centered">{{name}}</p>
+      <p class="centered" id="nameChat">{{name}}</p>
     </a>
   </div>
   {{/each}}
@@ -36,11 +36,11 @@
   <h3>General Chatrooms</h3>
   <div style="height:250px;width:330px;background-color: white; overflow:auto;">
   {{#each generalChat}}
-  <div class="container" id="{{id}}">
-    <a href=""  onclick="clickOn(event, {{id}})">
+  <div class="container" id="{{name}}">
+    <a href=""  onclick="clickOn(event, this)">
       <img src="images/{{image}}" alt="enter lesson">
       <div class="centered2">
-        {{name}}
+        <p style="margin:0">{{name}}</p>
         <p id="desc">{{description}}</p> 
       </div>
     </a>
@@ -54,14 +54,20 @@
 <div id="popupquiz" style="left:6%">
   <div id="innerquiz">
     <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br><br><br><br>
-    <h4>🏫 Beginner Grammar</h4><br>
-    <p>Objective: Learn and Practice Introductory Spanish Grammar</p>
+    <h4 id="title"></h4><br>
+    <p id="obj"></p>
     <a href="/chat"><button type="button" class="btn btn-success">Enter</button></a>
   </div>
 </div>
 
 <script>
-  function clickOn(e, id){
+  function clickOn(e, obj){
+    var title = obj.getElementsByTagName('p')[0].innerHTML;
+    $("#title").text(title);
+    if(title.includes("Grammar")) $("#obj").text("Objective: Learn and Practice Introductory Spanish Grammar");
+    else if(title.includes("Conversation")) $("#obj").text("Objective: Learn and Practice Introductory Spanish Conversation");
+    else if(title.includes("Vocabulary")) $("#obj").text("Objective: Learn and Practice Introductory Spanish Vocabulary");
+    else $("#obj").text(obj.getElementsByTagName('p')[1].innerHTML);
     var toggle = document.getElementsByClassName('toggle');
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
     document.getElementById("popupquiz").style.display = 'block';
