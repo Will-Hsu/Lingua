@@ -36,7 +36,7 @@
 		{
 			"name": "Ivan",
 			"image": "images/Ivan.png",
-			"text":	"Let's introduce ourselves in Spanish. Mi nombre es Iván pero puedes llamarme Iván el Mayor",
+			"text":	"Let's introduce ourselves in Spanish. Mi nombre es Iván. Mucho Gusto.",
 			"time": "11:00 AM",
 			"theme": "container",
 			"imgPos" : "", 
@@ -45,7 +45,7 @@
 		{
 			"name": "Lucy",
 			"image": "images/Lucy.png",
-			"text":	"Okay. Hola! mi nombre es Lucy!",
+			"text":	"Okay. Hola! Mi nombre es Lucy!",
 			"time": "11:03 AM",
 			"theme": "container",
 			"imgPos" : "", 
@@ -63,7 +63,7 @@
 		{
 			"name": "Lucy",
 			"image": "images/Lucy.png",
-			"text":	"Lo estoy haciendo bien",
+			"text":	"Lo estoy haciendo bien. This is a nice place to practice Spanish!",
 			"time": "11:07 AM",
 			"theme": "container",
 			"imgPos" : "", 

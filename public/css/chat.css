@@ -1,45 +1,47 @@
+.main{
+  margin: 5%;
+  margin-top: 0;
+  height: 65%;
+  padding: 3% 3%;
+  margin-bottom: 0;
+}
+.main2{
+  margin: 0% 5%;
+  height: 10%;
+}
+
 /* style adapted from w3school's tutorial on chat textbox */
-#chatroom_container {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 0 20px;
-}
-
-#text {
-  color: black;
-
-}
-
-.container {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  width: 100%;
-}
 
 .darker {
   border: 2px solid;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
   width: 100%;
   border-color: #ccc;
   background-color: #ddd;
+  margin: 5px 0;
+  height: fit-content;
 }
 
-.container::after, .darker::after{
+.container {
+  border: 2px solid #dedede;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+/*.container::after, .darker::after{
   content: "";
   clear: both;
   display: table;
-}
+}*/
 
 .container img, .darker img{
   float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
+  max-width: 40px;
+  margin-right: 10px;
   border-radius: 50%;
 }
 
@@ -50,11 +52,28 @@
 }
 
 .time-right {
+  font-size: 12px;
   float: right;
   color: #aaa;
+  margin-top: 3%;
 }
 
 .time-left {
+  font-size: 12px;
   float: left;
   color: #999;
+  margin-top: 3%;
+}
+
+p{
+  color: black;
+  font-size: 12px;
+  margin: 0;
+  line-height: 12px;
+  text-align: left;
+}
+
+#text {
+  color: rgb(18, 63, 131);
+  font-weight: bold;
 }

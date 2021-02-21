@@ -20,24 +20,32 @@
 </ul>
 
 <!--add title of screen-->
-
-<div class = "toggle"style="background-color: white; overflow:auto;">
-  <h2 style="color: black;">Chat Messages</h2>
-
+<div style="background-color: #333333; overflow:auto; margin-top: 25px; margin-left: 5%; margin-right: 5%; ">
+<h4 style="color: white; text-align: left; margin: 15px; margin-left: 20px">🏫 Beginner Conversation</h4></div>
+<div class="main" style="background-color: #f1f1f1; overflow:auto;">
   {{#each BeginnerConvChat}}
   <div class={{theme}}>
-    <img src={{image}} class={{imgPos}} style="width:100%;">
-    <p>{{name}}</p>
-    <p id="text">{{text}}</p>
+    <img src={{image}} class={{imgPos}}>
+    <p> <a id="text">{{name}}: </a>{{text}}</p>
     <span class={{timePos}}>{{time}}</span>
   </div>
   {{/each}}
-	<form id="addFriendForm" role="form" method="get" action="/add">
+</div>
 
+<div style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
+	<form id="addFriendForm" role="form" method="get" action="/add">
     <form name="message" role="form" method="get" action="/add">
       <input name="usermsg" type="text" id="usermsg" />
       <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
   </form>
+<!--
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Button</button>
+      <button class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+  </div>-->
 </div>
 
 </body>
