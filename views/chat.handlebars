@@ -22,15 +22,9 @@
 
 <!--add title of screen-->
 <div style="background-color: #333333; overflow:auto; margin-top: 20px; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
-<h4 style="color: white; text-align: left; margin: 5px 0">{{chatname}}</h4></div>
+<h4 id="chatname"style="color: white; text-align: left; margin: 5px 0">{{chatname}}</h4></div>
 <div class="main" id = "chatcontent" style="background-color: #f1f1f1; overflow:auto;">
-  {{#each BeginnerConvChat}}
-  <div class={{theme}}>
-    <img src={{image}} class={{imgPos}}>
-    <p> <a id="text">{{name}}: </a>{{text}}</p>
-    <span class={{timePos}}>{{time}}</span>
-  </div>
-  {{/each}}
+  <div id="chattopic"></div> <!--dynamically generated jquery code in javascript-->
 </div>
 
 <div style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
@@ -44,4 +38,36 @@
 </div>
 
 </body>
+
+<script>
+  if(document.getElementById('chatname').innerHTML.includes("Grammar")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Conversation")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Vocabulary")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Foods")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Travel")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Art")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+  else if(document.getElementById('chatname').innerHTML.includes("Gaming")){
+    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+    $("#chattopic").html(projectHTML);
+  }
+
+</script>
 </html>
