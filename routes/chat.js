@@ -4,7 +4,9 @@ var data = require('../data.json');
  */
 
 exports.view = function(req, res){
+  var name = req.params.name;
+  data['chatname'] = name;
+  data['database'] = "BeginnerConvChat";
   res.render('chat', data);
-  //document.getElementById("#chatcontent").scrollIntoView(false);
 };
 

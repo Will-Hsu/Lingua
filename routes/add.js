@@ -15,7 +15,7 @@ exports.sendMessage = function(request, response) {
 
 	var newMessage = {
     "name": "Chris",
-    "image": "images/Chris.png",
+    "image": "/images/Chris.png",
     "text":	request.query.usermsg,
     "time": n,
     "theme": "darker",
@@ -45,22 +45,22 @@ function responseToMessage(nameInput){
     var name; var image; var responseTochar;
     if(ran == 1){
         name = "David";
-        image = "images/David.png";
+        image = "/images/David.png";
         responseTochar = "¿Qué tal?";
     }
     else if(ran == 2){
         name = "Ivan";
-        image = "images/Ivan.png";
+        image = "/images/Ivan.png";
         responseTochar = "Estoy en nueva york. Dónde estás?";
     }
     else if(ran == 3){
         name = "Lucy";
-        image = "images/Lucy.png";
+        image = "/images/Lucy.png";
         responseTochar = "Nice to meet you!";
     }
     else if(ran == 4){
         name = "Ivan";
-        image = "images/Ivan.png";
+        image = "/images/Ivan.png";
         responseTochar = "Nice to meet you!";
     }
     else{

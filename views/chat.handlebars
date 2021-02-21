@@ -1,28 +1,28 @@
 <html>
 <head>
-	<title>Lingua: Chat </title>
+	<title>Lingua: Chat</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg" href="/images/favicon.svg"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/chat.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/chat.css">
   <script src="/js/chatinitialize.js"></script>
 </head>
 <body>
 
 <ul>
-  <li id="logo"><a><img src="images/logo.svg" class="img-responsive"></a></li>
-  <li><a href="/index"><img src="images/learn.svg" class="img-responsive"></a></li>
-  <li><a href="/chatroom"><img src="images/chat_fill.svg" class="img-responsive"></a></li>
-  <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
-  <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
+  <li id="logo"><a><img src="/images/logo.svg" class="img-responsive"></a></li>
+  <li><a href="/index"><img src="/images/learn.svg" class="img-responsive"></a></li>
+  <li><a href="/chatroom"><img src="/images/chat_fill.svg" class="img-responsive"></a></li>
+  <li><a href="/help"><img src="/images/help.svg" class="img-responsive"></a></li>
+  <li id="profile"><a href="/profile"><img src="/images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
 <!--add title of screen-->
 <div style="background-color: #333333; overflow:auto; margin-top: 20px; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
-<h4 style="color: white; text-align: left; margin: 5px 0">🏫 Beginner Conversation</h4></div>
+<h4 style="color: white; text-align: left; margin: 5px 0">{{chatname}}</h4></div>
 <div class="main" id = "chatcontent" style="background-color: #f1f1f1; overflow:auto;">
   {{#each BeginnerConvChat}}
   <div class={{theme}}>
@@ -41,14 +41,6 @@
       <img src="/images/chatmic.svg" style="width: 7%; margin:0;"alt="">
       <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
   </form>
-<!--
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Button</button>
-      <button class="btn btn-outline-secondary" type="button">Button</button>
-    </div>
-  </div>-->
 </div>
 
 </body>

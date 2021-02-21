@@ -56,7 +56,7 @@
     <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br><br><br><br>
     <h4 id="title"></h4><br>
     <p id="obj"></p>
-    <a href="/chat"><button type="button" class="btn btn-success">Enter</button></a>
+    <a onClick = "enterChat(event)"><button type="button" class="btn btn-success">Enter</button></a>
   </div>
 </div>
 
@@ -77,6 +77,11 @@
     var toggle = document.getElementsByClassName('toggle');
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'block';
     document.getElementById("popupquiz").style.display = 'none';
+    e.preventDefault();
+  }
+  function enterChat(e){
+    var url = "/chat/" + document.getElementById("title").innerHTML;
+    window.location.href = url;
     e.preventDefault();
   }
 </script>
