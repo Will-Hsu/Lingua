@@ -14,8 +14,8 @@ exports.sendMessage = function(request, response) {
     else n = n + " AM";
 
 	var newMessage = {
-    "name": "Kim",
-    "image": "images/Lucy.png",
+    "name": "Chris",
+    "image": "images/Chris.png",
     "text":	request.query.usermsg,
     "time": n,
     "theme": "darker",
@@ -28,7 +28,7 @@ exports.sendMessage = function(request, response) {
     responseToMessage(newMessage["name"]);
 }
 
-function responseToMessage(name){
+function responseToMessage(nameInput){
     var d = new Date();
     var n = d.toTimeString().substring(0, 5);
 
@@ -41,10 +41,38 @@ function responseToMessage(name){
     else if(hour == 0) n = "12" + n.substring(2) + " AM"
     else n = n + " AM";
 
+    var ran = Math.floor((Math.random() * 5) + 1); // 1 - 5 random
+    var name; var image; var responseTochar;
+    if(ran == 1){
+        name = "David";
+        image = "images/David.png";
+        responseTochar = "¿Qué tal?";
+    }
+    else if(ran == 2){
+        name = "Ivan";
+        image = "images/Ivan.png";
+        responseTochar = "Estoy en nueva york. Dónde estás?";
+    }
+    else if(ran == 3){
+        name = "Lucy";
+        image = "images/Lucy.png";
+        responseTochar = "Nice to meet you!";
+    }
+    else if(ran == 4){
+        name = "Ivan";
+        image = "images/Ivan.png";
+        responseTochar = "Nice to meet you!";
+    }
+    else{
+        name = "Spiderman";
+        image = "https://media.giphy.com/media/JU3wJzTin54XiXGgVR/giphy.gif";
+        responseTochar = "Cuál es tu película favorita?";
+    }
+
     var newMessage = {
-        "name": "David",
-        "image": "images/Ivan.png",
-        "text":	"Hi, " + name + ". Nice to Meet You",
+        "name": name,
+        "image": image,
+        "text":	"Hi, " + nameInput + ". " +responseTochar,
         "time": n,
         "theme": "container",
         "imgPos" : "", 

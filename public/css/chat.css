@@ -12,18 +12,7 @@
 
 /* style adapted from w3school's tutorial on chat textbox */
 
-.darker {
-  border: 2px solid;
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
-  border-color: #ccc;
-  background-color: #ddd;
-  margin: 5px 0;
-  height: fit-content;
-}
-
-.container {
+.container, .darker{
   border: 2px solid #dedede;
   background-color: white;
   border-radius: 5px;
@@ -32,11 +21,11 @@
   margin: 5px 0;
 }
 
-/*.container::after, .darker::after{
-  content: "";
-  clear: both;
-  display: table;
-}*/
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+  height: 60px;
+}
 
 .container img, .darker img{
   float: left;
@@ -76,4 +65,14 @@ p{
 #text {
   color: rgb(18, 63, 131);
   font-weight: bold;
+}
+
+#submitmsg {
+  background-color: #008CBA; /* Green */
+  border: gray;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
 }

@@ -8,6 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/chat.css">
+  <script src="/js/chatinitialize.js"></script>
 </head>
 <body>
 
@@ -20,9 +21,9 @@
 </ul>
 
 <!--add title of screen-->
-<div style="background-color: #333333; overflow:auto; margin-top: 25px; margin-left: 5%; margin-right: 5%; ">
-<h4 style="color: white; text-align: left; margin: 15px; margin-left: 20px">🏫 Beginner Conversation</h4></div>
-<div class="main" style="background-color: #f1f1f1; overflow:auto;">
+<div style="background-color: #333333; overflow:auto; margin-top: 20px; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
+<h4 style="color: white; text-align: left; margin: 5px 0">🏫 Beginner Conversation</h4></div>
+<div class="main" id = "chatcontent" style="background-color: #f1f1f1; overflow:auto;">
   {{#each BeginnerConvChat}}
   <div class={{theme}}>
     <img src={{image}} class={{imgPos}}>
@@ -33,9 +34,11 @@
 </div>
 
 <div style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
-	<form id="addFriendForm" role="form" method="get" action="/add">
+	<form role="form" method="get" action="/add" style="margin: 10px 0px;">
     <form name="message" role="form" method="get" action="/add">
-      <input name="usermsg" type="text" id="usermsg" />
+      <input name="usermsg" type="text" style="width: 65%;" id="usermsg" placeholder="Chat message" maxlength = "25"/>
+      <img src="/images/chatpic.svg" style="width: 7%; margin:0;"alt="">
+      <img src="/images/chatmic.svg" style="width: 7%; margin:0;"alt="">
       <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
   </form>
 <!--
