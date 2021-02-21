@@ -27,17 +27,23 @@ function changeUser(response) {
     "progress": "0/50",
     "imageURL": response.picture.data.url			
   }
-  $.post("/user", newMessage, callBackFn);
-
-  //data.BeginnerConvChat.push(newMessage);
   window.location.href = "/index";
-
-  //console.log(data["currentUser"]);
+  $.post("/user", newMessage, callBackFn);
     
-  // hide the fb login button
-  /*$(".facebookLogin").hide();
   // Change 'Scott Klemmer' to your name
-  $("#name").text(response.name);
-  // set your photo as the profile pic
-  $("#photo").attr("src", response.picture.data.url);*/
+  $("#tesd").text("hi");
+}
+
+function callBackFn(result){
+  console.log("callback");
+}
+
+function authfreeLogin(){
+  var newMessage = {
+    "name": "Chris",
+    "proficiency": "beginner",
+    "progress": "0/50",
+    "imageURL": "/images/Chris.png"		
+  }
+  $.post("/user", newMessage, callBackFn);
 }

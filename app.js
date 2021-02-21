@@ -51,7 +51,7 @@ app.get('/lesson', lesson.view);
 app.get('/chat', chat.view);
 app.get('/', login.view);
 app.get('/add', add.sendMessage);
-app.get('/user', user.addUser);
+app.post('/user', user.addUser);
 
 
 http.createServer(app).listen(app.get('port'), function(){

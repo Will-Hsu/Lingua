@@ -1,5 +1,7 @@
 var data = require("../data.json");
 
 exports.addUser = function(request, response) {   
-    console.log("in User.js");
+    console.log(request.body);
+    data.currentUser.push(request.body);
+    console.log(data.currentUser)
 }
