@@ -29,9 +29,6 @@ function changeUser(response) {
   }
   window.location.href = "/index";
   $.post("/user", newMessage, callBackFn);
-    
-  // Change 'Scott Klemmer' to your name
-  $("#tesd").text("hi");
 }
 
 function callBackFn(result){
