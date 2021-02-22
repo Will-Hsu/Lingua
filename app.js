@@ -47,7 +47,7 @@ app.get('/index', index.view);
 app.get('/chatroom', chatroom.view);
 app.get('/help', help.view);
 app.get('/profile', profile.view);
-app.get('/lesson', lesson.view);
+app.get('/lesson/:name', lesson.view);
 app.get('/chat/:name', chat.view);
 app.get('/', login.view);
 app.get('/add', add.sendMessage);

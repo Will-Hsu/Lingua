@@ -7,21 +7,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="/js/lesson.js"></script>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/lesson.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/lesson.css">
 </head>
 <body>
 
 <ul>
-  <li id="logo"><a><img src="images/logo.svg" class="img-responsive"></a></li>
-  <li><a href="/index"><img src="images/learn_fill.svg" class="img-responsive"></a></li>
-  <li><a href="/chatroom"><img src="images/chat.svg" class="img-responsive"></a></li>
-  <li><a href="/help"><img src="images/help.svg" class="img-responsive"></a></li>
-  <li id="profile"><a href="/profile"><img src="images/profile.svg" class="img-responsive"></a></li>
+  <li id="logo"><a><img src="/images/logo.svg" class="img-responsive"></a></li>
+  <li><a href="/index"><img src="/images/learn_fill.svg" class="img-responsive"></a></li>
+  <li><a href="/chatroom"><img src="/images/chat.svg" class="img-responsive"></a></li>
+  <li><a href="/help"><img src="/images/help.svg" class="img-responsive"></a></li>
+  <li id="profile"><a href="/profile"><img src="/images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
 <div id="quiz">
-  <h3 id="quizName">Quiz Name Goes here</h3>
+  <h3 id="quizName">{{lessonname}}</h3>
   <p style="color: white;" id="ptpossible">Points Possible: 1</p>
   <p style="color: white;" id="ptearned">Points Earned: 0</p>
   <p style="color: white;" id="progress">Progress: 1 out of 5</p>
