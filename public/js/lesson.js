@@ -193,5 +193,4 @@ $(document).ready(function() {
 
 function doneQuiz(){
   document.getElementById("quiz").style.visibility = "hidden";
-  
 }

@@ -7,14 +7,14 @@ exports.view = function(request, response){
   response.render('index', {
 	'newquiz': [
 		{ 	'name': 'Lesson 3: At a Restaurant',
-			'image': 'continue.svg',
+			'image': 'enter.svg',
 			'id': 'quiz3'
 		},
 		{ 	'name': 'Lesson 4: At an Airport',
 			'image': 'enter.svg',
 			'id': 'quiz4'
 		},
-		{ 	'name': 'Lesson 5: Public Transportation',
+		{ 	'name': 'Lesson 5: At Public Transportation',
 			'image': 'enter.svg',
 			'id': 'quiz5'
 		},

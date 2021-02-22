@@ -27,12 +27,12 @@
   </div>
 </div>
 <br>
-<h3 class="toggle">Lessons (new/in-progress)</h3>
+<h3 class="toggle">New Lessons</h3>
 <div>
   <div class = "toggle" id="lessons" style="height:250px;width:330px;background-color: white;overflow:auto;">
     {{#each newquiz}}
     <div class="container" id="{{id}}">
-      <a href="" onclick="clickOn(event, {{id}})">
+      <a href="" onclick="clickOn(event, this)">
         <img src="images/{{image}}" alt="enter lesson">
         <p class="centered">{{name}}</p>
       </a>
@@ -45,15 +45,27 @@
 <div id="popupquiz">
   <div id="innerquiz">
     <button type="button" class="close" aria-label="Close" onclick="clickOff(event)"> <span aria-hidden="true" style="margin:18px">&times;</span></button><br>
-    <h4 style="margin-left:15%">Beginner Lesson 1</h4>
-    <h4>Introduce Yourself</h4><br>
-    <p>Objective: Practice how to introduce yourself and say hello in Spanish!</p>
+    <h4 style="margin-left:15%" id="title"></h4>
+    <h4 id="title2"></h4><br>
+    <p id="obj"></p>
     <a href="/lesson"><button type="button" class="btn btn-success">Enter</button></a>
   </div>
 </div>
 
 <script>
   function clickOn(e, id){
+    var toggle = document.getElementsByClassName('toggle');
+    for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
+    document.getElementById("popupquiz").style.display = 'block';
+    e.preventDefault();
+  }
+  function clickOn(e, obj){
+    var title = obj.getElementsByTagName('p')[0].innerHTML;
+    $("#title").text(title.substring(0, 10));
+    $("#title2").text(title.substring(10));
+    if(title.includes("Introduce")) $("#obj").text("Objective: Practice how to introduce yourself and say hello in Spanish!");
+    else if(title.includes("Conversation")) $("#obj").text("Objective: Practice how to start a conversation in Spanish!");
+    else $("#obj").text("Practice common words and phrases used " + title.substring(10).toLowerCase() + " in Spanish.");
     var toggle = document.getElementsByClassName('toggle');
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
     document.getElementById("popupquiz").style.display = 'block';
@@ -73,8 +85,8 @@
 <!--You haven't completed any quizzes!-->
   {{#each oldquiz}}
   <div class="container" id="{{id}}">
-    <a href="" onclick="clickOn(event, {{id}})">
-      <img src="images/{{image}}" style="alt="enter lesson">
+    <a href="" onclick="clickOn(event, this)">
+      <img src="images/{{image}}" style="" alt="enter lesson">
       <p class="centered">{{name}}</p>
     </a>
   </div>
