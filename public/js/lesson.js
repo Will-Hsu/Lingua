@@ -58,7 +58,7 @@ Quiz.prototype.render = function(container) {
   var self = this;
   
   // Hide the quiz results modal
-  $('#quiz-results').hide();
+  //$('#quiz-results').hide();
   
   // Create a container for questions
   var question_container = $('<div>').attr('id', 'question').insertAfter('#quizName');
@@ -193,4 +193,9 @@ $(document).ready(function() {
 
 function doneQuiz(){
   document.getElementById("quiz").style.visibility = "hidden";
+  
+  // Display message
+  document.getElementById("quiz-results").style.display = "block";
+  document.getElementById("quiz-results-message").innerHTML = "Congrats! You finished!";
+  document.getElementById("quiz-results-score").innerHTML = totalPoints;
 }
