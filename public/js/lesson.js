@@ -1,4 +1,3 @@
-/** The following code was adapted from https://codepen.io/teachtyler/pen/raEprM for our multiple choice implementation **/
 // Array of all the questions and choices to populate the questions. This might be saved in some JSON file or a database and we would have to read the data in.
 var all_questions = [ 
 {
@@ -56,9 +55,6 @@ Quiz.prototype.render = function(container) {
   // For when we're out of scope
   var self = this;
   
-  // Hide the quiz results modal
-  //$('#quiz-results').hide();
-  
   // Create a container for questions
   var question_container = $('<div>').attr('id', 'question').insertAfter('#quizName');
   
@@ -98,6 +94,8 @@ Quiz.prototype.render = function(container) {
   });
 }
 
+/** The following code was adapted/modified from https://codepen.io/teachtyler/pen/raEprM for our multiple choice implementation **/
+/** Permission Granted (free of charge) for educational purposes **/
 // An object for a Question, which contains the question, the correct choice, and wrong choices. This block is the constructor.
 var Question = function(question_string, correct_choice, wrong_choices) {
   // Private fields for an instance of a Question object.
