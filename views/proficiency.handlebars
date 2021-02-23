@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Lingua: Proficiency</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg" href="/images/favicon.svg"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/login.css">
+	<script src="/js/facebook.js"></script>
+  <script>
+
+    function choose(proficiency) {
+      window.alert("hello");
+      if(proficiency === "beginner") {
+        localStorage.setItem('proficiency', 'beginner');
+      } else if(proficiency === "intermediate") {
+        localStorage.setItem('proficiency', 'intermediate');
+      } else {
+        localStorage.setItem('proficiency', 'advanced'); 
+      }
+      console.log(proficiency);
+      
+    }
+
+  </script>
+</head>
+<body>
+
+<h3>Choose your proficiency</h3>
+<a href="/index"><button type="button" class="btn btn-dark" id="selectBeginner" onclick="choose('beginner')">Beginner</button></a>
+<a href="/index"><button type="button" class="btn btn-dark" id="selectIntermediate" onclick="choose('intermediate')">Intermediate</button></a>
+<a href="/index"><button type="button" class="btn btn-dark" id="selectAdvanced" onclick="choose('advanced')">Advanced</button></a>
+</body>
+</html>

@@ -19,6 +19,7 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var addGen = require('./routes/addGen');
 var user = require('./routes/user');
+var proficiency = require('./routes/proficiency');
 
 
 var app = express();
@@ -53,6 +54,7 @@ app.get('/chat/:name', chat.view);
 app.get('/', login.view);
 app.get('/add', add.sendMessage);
 app.get('/addGen', addGen.sendMessage);
+app.get('/proficiency', proficiency.view);
 app.post('/user', user.addUser);
 
 

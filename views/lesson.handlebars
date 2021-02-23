@@ -58,7 +58,7 @@
     <p id="quiz-results-message"></p>
     <p id="quiz-results-score"></p>
     <a href="/lesson/{{lessonname}}"><button id="quiz-retry-button">Retry</button></a>
-    <a href="/index"><button id="quiz-return-button">Done</button></a>
+    <a href="/index"><button id="quiz-return-button" onclick="updateComplete()">Done</button></a>
 </div>
 
   <div id="popupquiz" style="left:6%">
@@ -81,6 +81,35 @@
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'block';
     document.getElementById("popupquiz").style.display = 'none';
     e.preventDefault();
+  }
+
+  var quizNameTemp = document.getElementById("quizName").innerHTML;
+
+  //Quiz results score needs to be updated upon loading ending screen
+  var totalPointsTemp = document.getElementById("quiz-results-score").innerHTML;
+  
+
+  function updateComplete() {
+    // Create localStorage lessons object to keep track
+    let lessonNumber = quizNameTemp.charAt(7);
+    if(localStorage.getItem('lessons_completed' + lessonNumber) === "false") {
+      localStorage.setItem('lessons_completed' + lessonNumber, "true");
+    } else if (localStorage.getItem('lessons_completed' + lessonNumber) === null) {
+      localStorage.setItem('lessons_completed' + lessonNumber, "true");
+    }
+    
+    // Save progress in local storage
+    if(localStorage.getItem('progress') === null) {
+      localStorage.setItem('progress', totalPointsTemp);
+    } else {
+      
+      console.log("total points temp ", totalPointsTemp);
+      let originalProgress = localStorage.getItem('progress');
+      let tempCount = parseInt(originalProgress) + parseInt(totalPointsTemp);
+      console.log("points in storage: ", parseInt(originalProgress), " points earned: ", parseInt(totalPointsTemp));
+      localStorage.setItem('progress', tempCount.toString());
+      window.alert("check console");
+    }
   }
 </script>
 

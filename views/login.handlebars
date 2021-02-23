@@ -9,6 +9,24 @@
   <link rel="stylesheet" href="css/login.css">
   {{> facebook}}
 	<script src="/js/facebook.js"></script>
+  <script>
+    // Add lessons in local storage
+    for(let i = 0; i < 8; i++) {
+      if(localStorage.getItem('lessons_completed' + i) === null) {
+        localStorage.setItem('lessons_completed' + i, false);
+      }
+    }
+
+    // Add progress in local storage
+    if(localStorage.getItem('progress') === null) {
+      localStorage.setItem('progress', 0);
+    }
+
+    // Add proficiency in local storage
+    if(localStorage.getItem('proficiency') === null) {
+      localStorage.setItem('proficiency', 'beginner');
+    }
+  </script>
 </head>
 <body>
   <div id="fb-root"></div>
@@ -17,7 +35,7 @@
     <img src="images/logo.svg" class="logo">
     <div>
       <div class="fb-login-button" scope="public_profile,email" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
-      <a href="/index"><button type="button" class="btn btn-dark" id="auth-free" onClick="authfreeLogin()">Auth-free Login</button></a>
+      <a href="/proficiency"><button type="button" class="btn btn-dark" id="auth-free" onClick="authfreeLogin()">Auth-free Login</button></a>
     </div>
   </div>
 </body>
