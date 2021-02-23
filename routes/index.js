@@ -6,6 +6,14 @@
 exports.view = function(request, response){
   response.render('index', {
 	'newquiz': [
+		{ 	'name': 'Lesson 1: Introduce Yourself',
+			'image': 'enter.svg',
+			'id': 'quiz1'
+		},
+		{ 	'name': 'Lesson 2: Start a Conversation',
+			'image': 'enter.svg',
+			'id': 'quiz2'
+		} ,
 		{ 	'name': 'Lesson 3: At a Restaurant',
 			'image': 'enter.svg',
 			'id': 'quiz3'
@@ -32,14 +40,10 @@ exports.view = function(request, response){
 		} 	
 	], 
   'oldquiz':[
-		{ 	'name': 'Lesson 1: Introduce Yourself',
-		    'image': 'redo.svg',
-		    'id': 'quiz1'
-		},
-		{ 	'name': 'Lesson 2: Start a Conversation',
+		{ 	'name': 'Lesson 0: I Am Fake',
 			'image': 'redo.svg',
-			'id': 'quiz2'
-		}  	
+			'id': 'quiz0'
+		} 	
 	]
   });
 };

@@ -20,7 +20,19 @@
   <li id="profile"><a href="/profile"><img src="/images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
-<div id="quiz">
+<div id="learningPage" style="left:6%">
+  <div id="innerquiz">
+    <h3 id="title">{{lessonname}}</h3><br>
+    Disclaimer: The quiz is written specifically for Lesson 1: Introduce Yourself. Other quizzes are in development.
+    <h4 id="title">Vocabulary</h4><br>
+    Hello : Hola<br>
+    Good Bye : Adios<br>
+    My name is (Chris) : Me llamo (Chris)<br>
+    <a onclick="startQuiz(event)"class="floated"><button type="button">StartQuiz</button></a>  
+  </div>
+</div>
+
+<div id="quiz" style="margin-top: 10; display: none;">
   <h3 id="quizName">{{lessonname}}</h3>
   <p style="color: white;" id="ptpossible">Points Possible: 1</p>
   <p style="color: white;" id="ptearned">Points Earned: 0</p>

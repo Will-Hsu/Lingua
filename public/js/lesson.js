@@ -178,8 +178,21 @@ Question.prototype.render = function(container) {
 }
 
 // Create all the objects and render the Quiz.
-$(document).ready(function() {
-  // Create an instance of the Quiz object
+$(document).ready(function() {});
+
+function doneQuiz(){
+  document.getElementById("quiz").style.visibility = "hidden";
+  
+  // Display message
+  document.getElementById("quiz-results").style.display = "block";
+  document.getElementById("quiz-results-message").innerHTML = "Congrats! You finished!";
+  document.getElementById("quiz-results-score").innerHTML = totalPoints;
+}
+
+function startQuiz(e){
+  document.getElementById("learningPage").style.display = "none";
+  document.getElementById("quiz").style.display = "block";
+
   var quiz = new Quiz();
   
   // Create Question objects from all_questions and add them to the Quiz object
@@ -189,13 +202,4 @@ $(document).ready(function() {
   }
   var quiz_container = $('#quiz');
   quiz.render(quiz_container);
-});
-
-function doneQuiz(){
-  document.getElementById("quiz").style.visibility = "hidden";
-  
-  // Display message
-  document.getElementById("quiz-results").style.display = "block";
-  document.getElementById("quiz-results-message").innerHTML = "Congrats! You finished!";
-  document.getElementById("quiz-results-score").innerHTML = totalPoints;
 }
