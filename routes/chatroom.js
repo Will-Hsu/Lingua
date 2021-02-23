@@ -6,13 +6,13 @@
 exports.view = function(req, res){
   res.render('chatroom', {
     'proficiency': [
-      { 	'name': '🏫 Beginner Grammar',
-        'image': 'enter.svg',
-        'id': 'beginGram'
-      },
       { 	'name': '🏫 Beginner Conversation',
         'image': 'enter.svg',
         'id': 'beginConv'
+      },    
+      { 	'name': '🏫 Beginner Grammar',
+      'image': 'enter.svg',
+      'id': 'beginGram'
       },
       { 	'name': '🏫 Beginner Vocabulary',
         'image': 'enter.svg',

@@ -1,13 +1,6 @@
 /** The following code was adapted from https://codepen.io/teachtyler/pen/raEprM for our multiple choice implementation **/
 // Array of all the questions and choices to populate the questions. This might be saved in some JSON file or a database and we would have to read the data in.
-var all_questions = [
-  {
-  question_string: "How do you say 'Hello!' in Spanish?",
-  choices: {
-    correct: "Hola!",
-    wrong: ["Mchola!", "Ola!", "Lotion!"]
-  }
-}, 
+var all_questions = [ 
 {
   question_string: "How do you say 'I am happy' in Spanish?",
   choices: {
@@ -35,9 +28,15 @@ var all_questions = [
     correct: "Mi color favorito es",
     wrong: ["Mi calar favorito es", "La magia es real", "Mi calor favorito es"]
   }
+}, {
+  question_string: "How do you say 'Hello!' in Spanish?",
+  choices: {
+    correct: "Hola!",
+    wrong: ["Mchola!", "Ola!", "Lotion!"]
+  }
 }];
 
-var correctAnswers = ["Hola!", "Mi trabajo es", "Me llamo", "Mi edad es", "Mi color favorito es"];
+var correctAnswers = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
 var incorrect_points = [];
 var pointavailable = 1;
 var totalPoints = 0;
