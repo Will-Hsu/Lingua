@@ -5,14 +5,14 @@ var all_questions = [
   question_string: "How do you say 'Hello!' in Spanish?",
   choices: {
     correct: "Hola!",
-    wrong: ["Agua!", "Ola!", "Lotion!"]
+    wrong: ["Mchola!", "Ola!", "Lotion!"]
   }
 }, 
 {
-  question_string: "How do you say 'My job is' in Spanish?",
+  question_string: "How do you say 'I am happy' in Spanish?",
   choices: {
-    correct: "Mi trabajo es",
-    wrong: ["Mi trabajk es", "Me llama", "El cielo es azul"]
+    correct: "Yo estoy feliz",
+    wrong: ["Yo estoy felix", "Me estoy feliz", "Feliz Navidad"]
   }
 },
 {
@@ -23,10 +23,10 @@ var all_questions = [
   }
 }, 
 {
-  question_string: "How do you say 'My age is' in Spanish?",
+  question_string: "How do you say 'I am 5 years old' in Spanish?",
   choices: {
-    correct: "Mi edad es",
-    wrong: ["Mi trabajo eres", "Mi magia es", "Mis magias eres"]
+    correct: "Tengo 5 años",
+    wrong: ["Tengo 5 año", "Tengo 5 eños", "Mis magias eres 5 eños"]
   }
 }, 
 {

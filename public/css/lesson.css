@@ -130,9 +130,25 @@
   outline: none;
   
 }
+.main{
+  margin: 5%;
+  margin-top: 0;
+  height: 75%;
+  padding: 2% 3%;
+  margin-bottom: 0;
+}
 
-#learningPage{
-  height:80%;width:330px;background-color:whitesmoke;overflow:auto;
-  margin: 6%;
-  text-align: center;
+#lesson_text, #lesson_text p{
+  color: black;
+  background: none;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+#lesson_text a{
+  color: black;
+  background: none;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: bold;
 }

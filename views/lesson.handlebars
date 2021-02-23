@@ -20,19 +20,28 @@
   <li id="profile"><a href="/profile"><img src="/images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
-<div id="learningPage">
-    <h3 id="title" style="color: black;">{{lessonname}}</h3><br>
+  <div style="background-color: #333333; overflow:auto; margin-top: 20px; margin-left: 5%; margin-right: 5%;padding: 3% 5%;">
+  <h4 id="title" style="color: white; text-align: left; margin: 3px 0">{{lessonname}}</h4><br></div>
+<div class="main" style="background-color: #f1f1f1; overflow:auto;">
+
+    <!--This is a sample lesson design for "Lesson 1: Introduce Yourself." The other lessons/quizzes would be wizard of oz-->
     <div id="samplelesson" style="text-align:left; margin: 20px; margin-top: 5px">
-    <p>In this lesson, you will learn how to greet people and introduce yourself in Spanish!<br></p>
+    <p style="font-size: 14px; line-height: 15px">In this lesson, you will learn how to greet people and introduce yourself in Spanish!<br></p>
     <h3 style="color: rgb(16, 45, 99); font-size: 15px; margin:5px 0">Common Phrases</h3><br>
-    <p style="font-size: 13px; line-height: 15px">To introduce yourself and say hello, you can use the following expressions: <br>
-    <b>Hola! Me llamo Alex. </b>(Hello! My name is Alex)<br>
-    Como te llamas? (What is your name?)<br>
-    </p>
+    <ul id="lesson_text">
+      <p><a>◘ Hola! Me llamo Alex.</a> <br>(Hello! My name is Alex)</p>
+      <p><a>◘ Como te llamas?</a> <br>(What is your name?)</p>
+      <p><a>◘ Mi color favorito es el azul.</a> <br>(My favorite color is blue)</p>
+      <p><a>◘ Tengo 15 años.</a> <br>(I am 15 years old)</p>
+      <p><a>◘ Yo estoy feliz.</a> <br>(I am happy.)</p>
+    </ul>
+    <p style="font-size: 13px; line-height: 15px; color: rgb(18, 75, 48); margin:0"> Pro-tip: Visit "Chat" in the menu-bar to practice with other learners before taking the quiz! <br>
+    <div style="margin: 0 10px; text-align:center;">
+      <img src="/images/hola.jpg" style = "height:23%; margin: 5px 0; margin-bottom: 1px"alt="">
+      <p style="font-size: 10px; margin: 0">Han Vectors by Vecteezy</p><br>
+      <a onclick="startQuiz(event)"class="floated"><button type="button" class="btn btn-success">Start Quiz</button></a>
     </div>
-    <div style="margin: 10px"><img src="/images/hola.jpg" style = "height:35%"alt=""><br>
-    <a style="font-size: 12px;" href="https://www.vecteezy.com/free-vector/han">Han Vectors by Vecteezy</a></div>
-    <a onclick="startQuiz(event)"class="floated"><button type="button" class="btn btn-success">Start Quiz</button></a>
+    </div>
 </div>
 
 <div id="quiz" style="margin-top: 10; display: none;">
