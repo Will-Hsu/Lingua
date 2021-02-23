@@ -11,16 +11,14 @@
 	<script src="/js/facebook.js"></script>
 </head>
 <body>
-
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=2419149194896926&autoLogAppEvents=1" nonce="ZO2dYvL6"></script>
-
   <div class = "content">
-  <img src="images/logo.svg" class="logo">
-
-  <div class="fb-login-button" scope="public_profile,email" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
-  <a href="/index"><button type="button" class="btn btn-dark" id="auth-free" onClick="authfreeLogin()">Auth-free Login</button></a>
+    <img src="images/logo.svg" class="logo">
+    <div>
+      <div class="fb-login-button" scope="public_profile,email" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+      <a href="/index"><button type="button" class="btn btn-dark" id="auth-free" onClick="authfreeLogin()">Auth-free Login</button></a>
+    </div>
   </div>
-    
 </body>
 </html>

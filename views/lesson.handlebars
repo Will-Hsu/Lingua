@@ -20,16 +20,19 @@
   <li id="profile"><a href="/profile"><img src="/images/profile.svg" class="img-responsive"></a></li>
 </ul>
 
-<div id="learningPage" style="left:6%">
-  <div id="innerquiz">
-    <h3 id="title">{{lessonname}}</h3><br>
-    Disclaimer: The quiz is written specifically for Lesson 1: Introduce Yourself. Other quizzes are in development.
-    <h4 id="title">Vocabulary</h4><br>
-    Hello : Hola<br>
-    Good Bye : Adios<br>
-    My name is (Chris) : Me llamo (Chris)<br>
-    <a onclick="startQuiz(event)"class="floated"><button type="button">StartQuiz</button></a>  
-  </div>
+<div id="learningPage">
+    <h3 id="title" style="color: black;">{{lessonname}}</h3><br>
+    <div id="samplelesson" style="text-align:left; margin: 20px; margin-top: 5px">
+    <p>In this lesson, you will learn how to greet people and introduce yourself in Spanish!<br></p>
+    <h3 style="color: rgb(16, 45, 99); font-size: 15px; margin:5px 0">Common Phrases</h3><br>
+    <p style="font-size: 13px; line-height: 15px">To introduce yourself and say hello, you can use the following expressions: <br>
+    <b>Hola! Me llamo Alex. </b>(Hello! My name is Alex)<br>
+    Como te llamas? (What is your name?)<br>
+    </p>
+    </div>
+    <div style="margin: 10px"><img src="/images/hola.jpg" style = "height:35%"alt=""><br>
+    <a style="font-size: 12px;" href="https://www.vecteezy.com/free-vector/han">Han Vectors by Vecteezy</a></div>
+    <a onclick="startQuiz(event)"class="floated"><button type="button" class="btn btn-success">Start Quiz</button></a>
 </div>
 
 <div id="quiz" style="margin-top: 10; display: none;">

@@ -12,11 +12,6 @@
   margin-top: 50px;
   width: 100%;
 }
-/*
-html {
-  display: table;
-}*/
-
 
 #quiz {
   margin-top: 80px;
@@ -134,4 +129,10 @@ html {
   cursor: pointer;
   outline: none;
   
+}
+
+#learningPage{
+  height:80%;width:330px;background-color:whitesmoke;overflow:auto;
+  margin: 6%;
+  text-align: center;
 }
