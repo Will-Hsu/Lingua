@@ -1,11 +1,7 @@
 var data = require("../data.json");
 var url = require('url');
 
-var counter = 0;
-
 exports.sendMessage = function(request, response) {
-    var name = request.url;
-    console.log(name);
     var d = new Date();
     var n = d.toTimeString().substring(0, 5);
 
@@ -27,13 +23,15 @@ exports.sendMessage = function(request, response) {
     "imgPos" : "right", 
     "timePos": "time-left"
 	}
-	data.BeginnerConvChat.push(newMessage);
+	data.FoodChat.push(newMessage);
 	response.render('chat', data);
 	console.log(newMessage);
     //setTimeout(function(){ responseToMessage(newMessage["name"]);}, 1000); // create a one second delay
     //setTimeout(responseToMessage, 1000, newMessage["name"]);
     responseToMessage(newMessage["name"]);
 }
+
+var counter = 0;
 
 function responseToMessage(nameInput){
     counter++;
@@ -49,32 +47,31 @@ function responseToMessage(nameInput){
     else if(hour == 0) n = "12" + n.substring(2) + " AM"
     else n = n + " AM";
 
-    var ran = Math.floor((Math.random() * 5) + 1); // 1 - 5 random
     var name; var image; var responseTochar;
-    if(counter%5 == 1){
+    if(counter % 5 == 1){
         name = "David";
         image = "/images/David.png";
-        responseTochar = "¿Qué tal?";
+        responseTochar = "Cuál es tu comida favorita? Me gustan los macarrones con queso.";
     }
-    else if(counter%5 == 2){
+    else if(counter % 5 == 2){
         name = "Ivan";
         image = "/images/Ivan.png";
-        responseTochar = "Estoy en nueva york. Dónde estás?";
+        responseTochar = "Vivo en San Diego y tenemos los mejores tacos. You should try some!";
     }
-    else if(counter%5 == 3){
+    else if(counter % 5 == 3){
         name = "Lucy";
         image = "/images/Lucy.png";
         responseTochar = "Nice to meet you!";
     }
-    else if(counter%5 == 4){
-        name = "Ivan";
-        image = "/images/Ivan.png";
-        responseTochar = "Nice to meet you!";
+    else if(counter % 5 == 4){
+        name = "Charlie";
+        image = "/images/Charlie.png";
+        responseTochar = "I like spicy chicken mcnuggets!";
     }
     else{
         name = "Spiderman";
         image = "https://media.giphy.com/media/JU3wJzTin54XiXGgVR/giphy.gif";
-        responseTochar = "Cuál es tu película favorita?";
+        responseTochar = "Me gusta el té de BOBA. Do you like them?";
     }
 
     var newMessage = {
@@ -86,6 +83,6 @@ function responseToMessage(nameInput){
         "imgPos" : "", 
         "timePos": "time-right"
     }
-    data.BeginnerConvChat.push(newMessage);
+    data.FoodChat.push(newMessage);
     console.log(newMessage);
 }

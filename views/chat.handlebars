@@ -27,9 +27,19 @@
   <div id="chattopic"></div> <!--dynamically generated jquery code in javascript-->
 </div>
 
-<div style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%;">
+<div id="levelChat" style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%; display:none">
 	<form role="form" method="get" action="/add" style="margin: 10px 0px;">
     <form name="message" role="form" method="get" action="/add">
+      <input name="usermsg" type="text" style="width: 65%;" id="usermsg" placeholder="Chat message" maxlength = "25"/>
+      <img src="/images/chatpic.svg" style="width: 7%; margin:0;"alt="">
+      <img src="/images/chatmic.svg" style="width: 7%; margin:0;"alt="">
+      <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+  </form>
+</div>
+
+<div id="genChat" style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%; display:none">
+	<form role="form" method="get" action="/addGen" style="margin: 10px 0px;">
+    <form name="message" role="form" method="get" action="/addGen">
       <input name="usermsg" type="text" style="width: 65%;" id="usermsg" placeholder="Chat message" maxlength = "25"/>
       <img src="/images/chatpic.svg" style="width: 7%; margin:0;"alt="">
       <img src="/images/chatmic.svg" style="width: 7%; margin:0;"alt="">
@@ -40,33 +50,17 @@
 </body>
 
 <script>
-  if(document.getElementById('chatname').innerHTML.includes("Grammar")){
+  /** Sample chatroom preloaded conversation 1 (designed for Beginner Conversation) **/
+  if(document.getElementById('chatname').innerHTML.includes("Grammar") || document.getElementById('chatname').innerHTML.includes("Conversation") || document.getElementById('chatname').innerHTML.includes("Vocabulary")){
     var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
     $("#chattopic").html(projectHTML);
+    document.getElementById("levelChat").style.display = "block";
   }
-  else if(document.getElementById('chatname').innerHTML.includes("Conversation")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
+  else{
+  /** Sample chatroom preloaded conversation 2 (designed for Food) **/
+    var projectHTML = "{{#each FoodChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
     $("#chattopic").html(projectHTML);
-  }
-  else if(document.getElementById('chatname').innerHTML.includes("Vocabulary")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
-    $("#chattopic").html(projectHTML);
-  }
-  else if(document.getElementById('chatname').innerHTML.includes("Foods")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
-    $("#chattopic").html(projectHTML);
-  }
-  else if(document.getElementById('chatname').innerHTML.includes("Travel")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
-    $("#chattopic").html(projectHTML);
-  }
-  else if(document.getElementById('chatname').innerHTML.includes("Art")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
-    $("#chattopic").html(projectHTML);
-  }
-  else if(document.getElementById('chatname').innerHTML.includes("Gaming")){
-    var projectHTML = "{{#each BeginnerConvChat}}<div class={{theme}}><img src={{image}} class={{imgPos}}><p> <a id='text'>{{name}}: </a>{{text}}</p><span class={{timePos}}>{{time}}</span></div>{{/each}}";
-    $("#chattopic").html(projectHTML);
+    document.getElementById("genChat").style.display = "block";
   }
 
 </script>

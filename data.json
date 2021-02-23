@@ -30,7 +30,6 @@
 		}
 
 	],
-
 	"BeginnerConvChat": [
 		{
 			"name": "Ivan",
@@ -64,6 +63,45 @@
 			"image": "/images/Lucy.png",
 			"text":	"Lo estoy haciendo bien. This is a nice place to practice Spanish!",
 			"time": "11:07 AM",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
+		}
+
+	],
+	"FoodChat": [
+		{
+			"name": "Henry",
+			"image": "/images/Henry.png",
+			"text":	"I am planning a trip to Tijuana this weekend. What do you guys suggest I should check out?",
+			"time": "05:00 PM",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
+		},
+		{
+			"name": "Charlie",
+			"image": "/images/Charlie.png",
+			"text":	"Hola, Ivan! Que divertido! I love to go to Mercado Hildago. They have great tacos there!",
+			"time": "05:13 PM",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
+		},
+		{
+			"name": "Henry",
+			"image": "/images/Henry.png",
+			"text":	"Me gustan mucho los tacos. Gracias, Lucy!",
+			"time": "06:00 PM",
+			"theme": "container",
+			"imgPos" : "", 
+			"timePos": "time-right"
+		},
+		{
+			"name": "Charlie",
+			"image": "/images/Charlie.png",
+			"text":	"De nada. Buen viaje.",
+			"time": "07:07 PM",
 			"theme": "container",
 			"imgPos" : "", 
 			"timePos": "time-right"
