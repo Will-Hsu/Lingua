@@ -4,14 +4,14 @@ var all_questions = [
   question_string: "How do you say 'I am happy' in Spanish?",
   choices: {
     correct: "Yo estoy feliz",
-    wrong: ["Yo estoy felix", "Me estoy feliz", "Feliz Navidad"]
+    wrong: ["Yo estoy felix", "Me estoy feliz", "🎄Feliz Navidad"]
   }
 },
 {
   question_string: "How do you say 'My name is' in Spanish?",
   choices: {
     correct: "Me llamo",
-    wrong: ["Mi perro esta corriendo", "El cielo es azul", "La magia es real"]
+    wrong: ["Mi perro esta", "El cielo es", "La magia eres"]
   }
 }, 
 {
@@ -39,6 +39,7 @@ var correctAnswers = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color f
 var incorrect_points = [];
 var pointavailable = 1;
 var totalPoints = 0;
+var questionIndex = 0;
 
 // An object for a Quiz, which will contain Question objects.
 var Quiz = function() {  this.questions = [];}
@@ -65,7 +66,6 @@ Quiz.prototype.render = function(container) {
     console.log("total points: " + totalPoints);
     document.getElementById("ptpossible").innerHTML = "Points Possible: " + 1/pointavailable;
     document.getElementById("ptearned").innerHTML = "Points Earned: " + totalPoints;
-    document.getElementById("progress").innerHTML = "Progress: "+ (current_question_index + 1) +" out of 5";
   }
   
   // Render the first question
@@ -126,7 +126,7 @@ var Question = function(question_string, correct_choice, wrong_choices) {
 Question.prototype.render = function(container) {
   // For when we're out of scope
   var self = this;
-  
+  ++questionIndex; 
   // Fill out the question label
   var question_string_h2;
   if (container.children('h2').length === 0) {
@@ -134,7 +134,7 @@ Question.prototype.render = function(container) {
   } else {
     question_string_h2 = container.children('h2').first();
   }
-  question_string_h2.text(this.question_string);
+  question_string_h2.text("Q" + questionIndex + " of 5 : " + this.question_string);
   
   // Get rid of previous question's choices and create current new ones
   if (container.children('input[type=radio]').length > 0) {
@@ -174,22 +174,20 @@ Question.prototype.render = function(container) {
   });
 }
 
-// Create all the objects and render the Quiz.
 $(document).ready(function() {});
 
 function doneQuiz(){
   document.getElementById("quiz").style.visibility = "hidden";
-  
   // Display message
   document.getElementById("quiz-results").style.display = "block";
-  document.getElementById("quiz-results-message").innerHTML = "Congrats! You finished!";
-  document.getElementById("quiz-results-score").innerHTML = totalPoints;
+  document.getElementById("quiz-results-message").innerHTML = "Congrats! You completed this lesson!";
+  document.getElementById("quiz-results-score").innerHTML = "You earned + " + totalPoints + " points!";
 }
 
 function startQuiz(e){
   document.getElementById("learningPage").style.display = "none";
   document.getElementById("quiz").style.display = "block";
-
+  document.getElementById("quiz").style.marginTop = "100px";
   var quiz = new Quiz();
   
   // Create Question objects from all_questions and add them to the Quiz object

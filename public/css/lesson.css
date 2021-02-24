@@ -14,10 +14,10 @@
 }
 
 #quiz {
-  margin-top: 80px;
-  margin: -44px 50px 0px;
+  margin: 30px 25px;
+  margin-top: 100px;
   position: relative;
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
 }
 
 #quiz h1 {
@@ -27,40 +27,45 @@
   line-height: 44px;
 }
 
-#quiz button {
+#checkButton {
   float: left;
   margin: 8px 0px 0px 8px;
-  padding: 4px 8px;
-  background: #9ACFCC;
-  color: #00403C;
+  padding: 8px 15px;
+  background: #028f88;
+  color: #f1f1f1;
   font-size: 14px;
   cursor: pointer;
   outline: none;
 }
 
-#quiz button:hover {
+#checkButton:hover {
   background: #36a39c;
   color: #FFF;
 }
 
-#quiz button:disabled {
-  opacity: 0.5;
-  background: #9ACFCC;
-  color: #00403C;
-  cursor: default;
+#quitButton{
+  background: #93a3a2;
+  color: #0f0f0f;
+  float: left;
+  margin: 8px 0px 0px 80px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
 }
 
 #question {
-  
-  padding: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
   background: #FAFAFA;
   text-align: center;
 }
 
 #question h2 {
-  margin-bottom: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #question input[type=radio] {
@@ -76,6 +81,8 @@
   width: calc(50% - 8px);
   min-width: 50px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 #question label:hover {
@@ -88,18 +95,16 @@
 }
 
 #quiz-results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: absolute;
-  top: 44px;
-  left: 0px;
+  top: 70;
   background: #FAFAFA;
-  width: 100%;
-  height: calc(100% - 44px);
+  width: 80%;
+  margin: 20% 10%;
+  height: calc(60% - 44px);
 }
 
 #quiz-results-message {
+  margin: 10%;
   display: block;
   color: #00403C;
   font-size: 20px;
@@ -107,9 +112,11 @@
 }
 
 #quiz-results-score {
+  margin: 10%;
   display: block;
-  color: #31706c;
+  color: #00403C;
   font-size: 20px;
+  font-weight: bold;
 }
 
 #quiz-results-score b {
@@ -119,17 +126,27 @@
 }
 
 #quiz-retry-button {
-
+  background: #df5f4e;
+  color: #ffffff;
   float: left;
-  margin: 8px 0px 0px 8px;
-  padding: 4px 8px;
-  background: #9ACFCC;
-  color: #00403C;
+  margin: 8px 0px 0px 80px;
+  padding: 8px 15px;
   font-size: 14px;
   cursor: pointer;
   outline: none;
-  
 }
+
+#quiz-return-button {
+  float: left;
+  margin: 8px 0px 0px 8px;
+  padding: 8px 15px;
+  background: #028f88;
+  color: #f1f1f1;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
 .main{
   margin: 5%;
   margin-top: 0;
