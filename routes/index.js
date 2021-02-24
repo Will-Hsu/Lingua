@@ -39,7 +39,7 @@ var jsonObject = {
 		} 	
 	], 
   'oldquiz':[
-		{ 	'name': 'Lesson 0: I Am Fake',
+		{ 	'name': 'Lesson 0: Sample Completed Quiz',
 			'image': 'redo.svg',
 			'id': 'quiz0'
 		} 	
