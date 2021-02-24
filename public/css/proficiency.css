@@ -1,0 +1,37 @@
+body{
+  background-color: 1A2A37;
+}
+
+.logo{
+  height: 80px;
+}
+
+.content{
+  text-align: center;
+  position: fixed; /* or absolute */
+  top: 15%;
+}
+
+h3{
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+  font-weight: normal;
+}
+
+button{
+  background-color: rgb(32, 32, 32);
+  color: white;
+  height: 50px;
+  width: 150px;
+  border-width: 0.5;
+  border-color: white;
+  margin: 4% 10%;
+}
+
+p{
+  font-size: 12px;
+  line-height: 12px;
+  color: white;
+  margin: 5px;
+}

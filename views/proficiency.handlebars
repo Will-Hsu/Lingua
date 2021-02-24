@@ -6,30 +6,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/login.css">
-	<script src="/js/facebook.js"></script>
-  <script>
-
-    function choose(proficiency) {
-      window.alert("hello");
-      if(proficiency === "beginner") {
-        localStorage.setItem('proficiency', 'beginner');
-      } else if(proficiency === "intermediate") {
-        localStorage.setItem('proficiency', 'intermediate');
-      } else {
-        localStorage.setItem('proficiency', 'advanced'); 
-      }
-      console.log(proficiency);
-      
-    }
-
-  </script>
+  <link rel="stylesheet" href="/css/proficiency.css">
 </head>
 <body>
 
-<h3>Choose your proficiency</h3>
-<a href="/index"><button type="button" class="btn btn-dark" id="selectBeginner" onclick="choose('beginner')">Beginner</button></a>
-<a href="/index"><button type="button" class="btn btn-dark" id="selectIntermediate" onclick="choose('intermediate')">Intermediate</button></a>
-<a href="/index"><button type="button" class="btn btn-dark" id="selectAdvanced" onclick="choose('advanced')">Advanced</button></a>
+  <div class = "content">
+    <img src="images/logo.svg" class="logo">
+    <div>
+      <h3>Choose your Spanish proficiency</h3>
+      <p>◘ Beginner: Know some to no Spanish phrases and words.</p>
+      <p>◘ Intermediate: Can hold a daily conversation with others.</p>
+      <p>◘ Advanced: Can converse using complex Spanish sentences. </p>
+
+      <a href="/index"><button type="button" id="selectBeginner" onclick="choose('beginner')">Beginner</button></a>
+      <a href="/index"><button type="button" id="selectIntermediate" onclick="choose('intermediate')">Intermediate</button></a>
+      <a href="/index"><button type="button" id="selectAdvanced" onclick="choose('advanced')">Advanced</button></a>
+
+      <p style="color: rgb(224, 224, 16); margin-bottom: 10px; text-align: center;">Note: You can change the proficiency setting in "Profile."</p>
+    </div>
+  </div>
+
+<script>
+  function choose(proficiency) {
+    // window.alert("hello");
+    if(proficiency === "beginner") {
+      localStorage.setItem('proficiency', 'beginner');
+    } else if(proficiency === "intermediate") {
+      localStorage.setItem('proficiency', 'intermediate');
+    } else {
+      localStorage.setItem('proficiency', 'advanced'); 
+    }
+    console.log(proficiency);   
+  }
+</script>
 </body>
 </html>

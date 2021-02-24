@@ -88,8 +88,7 @@
   var quizNameTemp = document.getElementById("quizName").innerHTML;
 
   //Quiz results score needs to be updated upon loading ending screen
-  var totalPointsTemp = document.getElementById("quiz-results-score").innerHTML;
-  
+  var totalPointsTemp = document.getElementById("quiz-results-score").innerHTML;  
 
   function updateComplete() {
     // Create localStorage lessons object to keep track
@@ -104,13 +103,12 @@
     if(localStorage.getItem('progress') === null) {
       localStorage.setItem('progress', totalPointsTemp);
     } else {
-      
       console.log("total points temp ", totalPointsTemp);
       let originalProgress = localStorage.getItem('progress');
       let tempCount = parseInt(originalProgress) + parseInt(totalPointsTemp);
       console.log("points in storage: ", parseInt(originalProgress), " points earned: ", parseInt(totalPointsTemp));
       localStorage.setItem('progress', tempCount.toString());
-      window.alert("check console");
+      // window.alert("check console");
     }
   }
 </script>
