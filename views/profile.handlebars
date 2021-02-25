@@ -36,9 +36,9 @@
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Change Proficiency ▾</button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#" onclick="changeLevel(event, 'beginner')">Beginner</a>
-        <a href="#" onclick="changeLevel(event, 'intermediate')">Intermediate</a>
-        <a href="#" onclick="changeLevel(event, 'advanced')">Advanced</a>
+        <a href="#" onclick="changeLevel(event, 'Beginner')">Beginner</a>
+        <a href="#" onclick="changeLevel(event, 'Intermediate')">Intermediate</a>
+        <a href="#" onclick="changeLevel(event, 'Advanced')">Advanced</a>
       </div>
     </div><br><br><br>
 
@@ -47,7 +47,7 @@
   </div>
     <a href="/" class="floated"><button type="button" class="btn btn-success" style="display: none; margin-left: 10px;" id="button-logout">Confirm</button></a>
     <a href="/profile" class="floated"><button type="button" class="btn btn-light" style="display: none;" id="button-logout2">Cancel</button></a>
-    <a href="/profile" class="floated"><button type="button" class="btn btn-success" style="display: none; margin-left: 10px;" id="changeProf1">Confirm</button></a>
+    <a href="/profile" class="floated"><button type="button" class="btn btn-success" style="display: none; margin-left: 10px;" id="changeProf1" onclick="updateProfInStorage()">Confirm</button></a>
     <a href="/profile" class="floated"><button type="button" class="btn btn-light" style="display: none;" id="changeProf2">Cancel</button></a>
 
   <!-- Change Proficiency level + pop-up -->

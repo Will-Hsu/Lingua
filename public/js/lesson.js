@@ -182,6 +182,16 @@ function doneQuiz(){
   document.getElementById("quiz-results").style.display = "block";
   document.getElementById("quiz-results-message").innerHTML = "Congrats! You completed this lesson!";
   document.getElementById("quiz-results-score").innerHTML = "You earned + " + totalPoints + " points!";
+
+  // Save progress in local storage
+  if(localStorage.getItem('progress_earned') === null) {
+    localStorage.setItem('progress_earned', totalPoints);
+  } else {
+    localStorage.setItem('progress_earned', totalPoints.toString());
+    let sumPoints = parseInt(localStorage.getItem('progress')) + totalPoints;
+    localStorage.setItem('progress', sumPoints.toString());
+    console.log(sumPoints);
+  }
 }
 
 function startQuiz(e){

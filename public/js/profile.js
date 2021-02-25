@@ -3,6 +3,10 @@ function changeLevel(e, level) {
 	$(".replace").html(projectHTML);
   document.getElementById("changeProf1").style.display = 'block';
   document.getElementById("changeProf2").style.display = 'block';
+
+  //Keep track of new proficiency
+  localStorage.setItem('proficiency_change', level);
+
   e.preventDefault();
 }
 
@@ -30,4 +34,14 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+// Changes proficiency
+window.onload = (event) => {
+  document.getElementById("level").innerHTML = localStorage.getItem('proficiency');
+};
+
+function updateProfInStorage() {
+  let tempProf = localStorage.getItem('proficiency_change');
+  localStorage.setItem('proficiency', tempProf);
 }

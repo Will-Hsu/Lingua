@@ -87,9 +87,6 @@
 
   var quizNameTemp = document.getElementById("quizName").innerHTML;
 
-  //Quiz results score needs to be updated upon loading ending screen
-  var totalPointsTemp = document.getElementById("quiz-results-score").innerHTML;  
-
   function updateComplete() {
     // Create localStorage lessons object to keep track
     let lessonNumber = quizNameTemp.charAt(7);
@@ -97,18 +94,6 @@
       localStorage.setItem('lessons_completed' + lessonNumber, "true");
     } else if (localStorage.getItem('lessons_completed' + lessonNumber) === null) {
       localStorage.setItem('lessons_completed' + lessonNumber, "true");
-    }
-    
-    // Save progress in local storage
-    if(localStorage.getItem('progress') === null) {
-      localStorage.setItem('progress', totalPointsTemp);
-    } else {
-      console.log("total points temp ", totalPointsTemp);
-      let originalProgress = localStorage.getItem('progress');
-      let tempCount = parseInt(originalProgress) + parseInt(totalPointsTemp);
-      console.log("points in storage: ", parseInt(originalProgress), " points earned: ", parseInt(totalPointsTemp));
-      localStorage.setItem('progress', tempCount.toString());
-      // window.alert("check console");
     }
   }
 </script>

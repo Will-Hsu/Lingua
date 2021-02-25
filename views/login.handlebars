@@ -34,6 +34,10 @@ if(localStorage.getItem('progress') === null) {
   localStorage.setItem('progress', 0);
 }
 
+if(localStorage.getItem('progress_earned') === null) {
+  localStorage.setItem('progress_earned', 0);
+}
+
 // Add proficiency in local storage
 if(localStorage.getItem('proficiency') === null) {
   localStorage.setItem('proficiency', 'beginner');
