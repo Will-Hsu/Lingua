@@ -81,14 +81,27 @@ Quiz.prototype.render = function(container) {
       if(correctAnswers.includes(document.getElementById(labelid).innerHTML)){
         document.getElementById(labelid).style.border = '2px solid limegreen';
         totalPoints += 1/pointavailable;
+        //rounds to 2 decimals
+        totalPoints = Math.round((totalPoints + Number.EPSILON) * 100) / 100;
         if(++current_question_index < 5) setTimeout(function(){ change_question();}, 1000);
         else doneQuiz();
         pointavailable = 1;
+        document.getElementById("invalid_choice").innerHTML = "";
       }else{
-        // make it red update points
-        document.getElementById(labelid).style.border = '2px solid red';
-        pointavailable *= 2;
-        document.getElementById("ptpossible").innerHTML = "Points Possible: " + 1/pointavailable;
+        // make it read update points
+        if(document.getElementById(labelid).style.border !== '2px solid red') {
+          document.getElementById(labelid).style.border = '2px solid red';
+          pointavailable *= 2;
+          // Rounding (up) to 2 decimal places
+          let mathTemp = Math.round(((1/pointavailable) + Number.EPSILON) * 100) / 100;
+          document.getElementById("ptpossible").innerHTML = "Points Possible: " + mathTemp;
+          console.log("chose incorrect");
+        }
+        else {
+          console.log("pop up notification that incorrect");
+          document.getElementById("invalid_choice").innerHTML = "<span style='color: red; clear:left;'>" + "Please choose another selection" + "</span>";
+
+        }
       }
     }
   });
@@ -166,6 +179,7 @@ Question.prototype.render = function(container) {
   
   // Add a listener for the radio button to change which one the user has clicked on
   $('input[name=choices]').change(function(index) {
+    document.getElementById("invalid_choice").innerHTML = "";
     var selected_radio_button_value = $('input[name=choices]:checked').val();
     // Change the user choice index
     self.user_choice_index = parseInt(selected_radio_button_value.substr(selected_radio_button_value.length - 1, 1));
@@ -188,7 +202,7 @@ function doneQuiz(){
     localStorage.setItem('progress_earned', totalPoints);
   } else {
     localStorage.setItem('progress_earned', totalPoints.toString());
-    let sumPoints = parseInt(localStorage.getItem('progress')) + totalPoints;
+    let sumPoints = parseFloat(localStorage.getItem('progress')) + totalPoints;
     localStorage.setItem('progress', sumPoints.toString());
     console.log(sumPoints);
   }
