@@ -22,8 +22,8 @@
 <h3 class="toggle" id="tesd">Progress: beginner</h3>
 <div class="progress toggle" style="width:92%">
   <div class="progress-bar progress-bar-striped active" id="bar" role="progressbar"
-  aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width:0%">
-  0/50 points
+  aria-valuenow="0" aria-valuemin="0" aria-valuemax="40" style="width:0%">
+  0/40 points
   </div>
 </div>
 <br>
@@ -84,7 +84,7 @@
     // Upgrade proficiency if points are met
     let tempPoints = parseFloat(localStorage.getItem('progress'));
     let proficiency = localStorage.getItem('proficiency');
-    if(parseFloat(localStorage.getItem('progress')) >= 50 ) {
+    if(parseFloat(localStorage.getItem('progress')) >= 40 ) {
 
       if(proficiency === "beginner" || proficiency === "Beginner") {
         localStorage.setItem('proficiency', 'Intermediate');
@@ -92,7 +92,7 @@
         localStorage.setItem('proficiency', 'Advanced');
       }
 
-      tempPoints = tempPoints - 50;
+      tempPoints = tempPoints - 40;
       console.log("tempPoints are: " + tempPoints );
       localStorage.setItem('progress_earned', 0);
       localStorage.setItem('progress', tempPoints);
@@ -103,24 +103,14 @@
     document.getElementById("tesd").innerHTML = "Progress: " + localStorage.getItem('proficiency');
 
     //progress
-    let tempNumber = (parseInt(localStorage.getItem('progress') ) * 2  ) / 100;
+    let tempNumber = (parseInt(localStorage.getItem('progress'))) / 40;
     tempNumber = tempNumber * 100;
     document.getElementById("bar").style.width = tempNumber + "%";
 
     //Rounds the points
     tempPoints = Math.round((tempPoints + Number.EPSILON ) * 100) / 100;
     console.log(tempPoints);
-    document.getElementById("bar").innerHTML = tempPoints + "/50 points"; 
-    
-    
-    //completed quizzes update
-    /*
-    for(let i = 0; i < 8; i++) {
-      if(localStorage.getItem('lessons_completed' + i) === "true" ) {
-
-      }
-    }*/
-
+    document.getElementById("bar").innerHTML = tempPoints + "/40 points"; 
   };
 
   

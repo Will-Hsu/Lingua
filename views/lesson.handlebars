@@ -26,7 +26,7 @@
   <div class="main" style="background-color: #f1f1f1; overflow:auto;">
     <!--This is a sample lesson design for "Lesson 1: Introduce Yourself." The other lessons/quizzes would be wizard of oz-->
     <div id="samplelesson" style="text-align:left; margin: 20px; margin-top: 5px">
-      <p style="font-size: 14px; line-height: 15px">You will learn how to greet people and introduce yourself in Spanish! Familiarize yourself with the following:<br></p>
+      <p style="font-size: 14px; line-height: 15px">Learn how to introduce yourself in Spanish! Familiarize yourself with the following:<br></p>
       <h3 style="color: rgb(16, 45, 99); font-size: 15px; margin:5px 0">Common Phrases</h3><br>
       <ul id="lesson_text">
         <p><a>◘ Hola! Me llamo Alex.</a> <br>(Hello! My name is Alex)</p>
@@ -47,13 +47,12 @@
 
 <div id="quiz" style="margin-top: 10; display: none; background-color: #333333; overflow:auto; padding: 3% 5%;">
   <h4 id="quizName" style="color: white; text-align: left; margin: 15px 5">{{lessonname}}</h4><br>
+    <!-- Invalid message -->
+  <span id="invalid_choice"></span>
   <div style="margin:5px"><p style="color: white;" id="ptpossible">Points Possible: 1</p>
   <p style="color: white;" id="ptearned">Points Earned: 0</p></div>
   <button id="quitButton" onclick= "clickOn(event, 'index')">Quit</button>
   <button id="checkButton">Check</button>
-  <!-- Invalid message -->
-  <br><br><br><br><br><br><br><br><br>
-  <span id="invalid_choice"></span>
 </div> 
 
 <!--finish screen-->
