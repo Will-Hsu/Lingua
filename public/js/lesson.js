@@ -95,10 +95,10 @@ Quiz.prototype.render = function(container) {
           // Rounding (up) to 2 decimal places
           let mathTemp = Math.round(((1/pointavailable) + Number.EPSILON) * 100) / 100;
           document.getElementById("ptpossible").innerHTML = "Points Possible: " + mathTemp;
-          console.log("chose incorrect");
+          //console.log("chose incorrect");
         }
         else {
-          console.log("pop up notification that incorrect");
+          //console.log("pop up notification that incorrect");
           document.getElementById("invalid_choice").innerHTML = "<span style='color: red; clear:left;'>" + "Please choose another selection" + "</span>";
 
         }
@@ -197,12 +197,13 @@ function doneQuiz(){
   document.getElementById("quiz-results-message").innerHTML = "Congrats! You completed this lesson!";
   document.getElementById("quiz-results-score").innerHTML = "You earned + " + totalPoints + " points!";
 
+  let sumPoints = 0;
   // Save progress in local storage
   if(localStorage.getItem('progress_earned') === null) {
     localStorage.setItem('progress_earned', totalPoints);
   } else {
     localStorage.setItem('progress_earned', totalPoints.toString());
-    let sumPoints = parseFloat(localStorage.getItem('progress')) + totalPoints;
+    sumPoints = parseFloat(localStorage.getItem('progress')) + totalPoints;
     localStorage.setItem('progress', sumPoints.toString());
     console.log(sumPoints);
   }

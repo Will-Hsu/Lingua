@@ -6,6 +6,12 @@ var data = require('../data.json');
 	response.render('index', data);
   }
 
+  /* Get POST request to get quiz name from index.js in js file once lesson is completed 
+  	take the data.json object, grab old quiz, push quiz name to old quiz with changed image
+	remove quiz name from new quiz
+ 
+  */
+
   /*
 exports.view = function(request, response){
   response.render('index', {

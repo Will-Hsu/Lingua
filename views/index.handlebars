@@ -80,6 +80,25 @@
 
   // checks proficiency, progress, and completed quizzes on window load
   window.onload = (event) => {
+
+    // Upgrade proficiency if points are met
+    let tempPoints = parseFloat(localStorage.getItem('progress'));
+    let proficiency = localStorage.getItem('proficiency');
+    if(parseFloat(localStorage.getItem('progress')) >= 50 ) {
+
+      if(proficiency === "beginner" || proficiency === "Beginner") {
+        localStorage.setItem('proficiency', 'Intermediate');
+      } else if(proficiency === "intermediate" || proficiency === "Intermediate") {
+        localStorage.setItem('proficiency', 'Advanced');
+      }
+
+      tempPoints = tempPoints - 50;
+      console.log("tempPoints are: " + tempPoints );
+      localStorage.setItem('progress_earned', 0);
+      localStorage.setItem('progress', tempPoints);
+      console.log("progress is now: " + localStorage.getItem('progress'));
+    } 
+
     //proficiency
     document.getElementById("tesd").innerHTML = "Progress: " + localStorage.getItem('proficiency');
 
@@ -89,16 +108,11 @@
     document.getElementById("bar").style.width = tempNumber + "%";
 
     //Rounds the points
-    let tempPoints = parseFloat(localStorage.getItem('progress'));
     tempPoints = Math.round((tempPoints + Number.EPSILON ) * 100) / 100;
     console.log(tempPoints);
     document.getElementById("bar").innerHTML = tempPoints + "/50 points"; 
-
-    //Read database from data.json
-    /*fetch('../../data.json').then(response => response.json()).then(data => {
-  	  console.log(data);
-    });*/
-
+    
+    
     //completed quizzes update
     /*
     for(let i = 0; i < 8; i++) {
