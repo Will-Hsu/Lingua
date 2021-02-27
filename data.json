@@ -146,5 +146,79 @@
 			"image": "redo.svg",
 			"id": "quiz0"
 		} 	
+	], "newquizInt": [
+		{ 	"name": "Lesson 1: Travel Abroad",
+			"image": "enter.svg",
+			"id": "quiz1"
+		},
+		{ 	"name": "Lesson 2: My Family Members",
+			"image": "enter.svg",
+			"id": "quiz2"
+		} ,
+		{ 	"name": "Lesson 3: Watch A Movie",
+			"image": "enter.svg",
+			"id": "quiz3"
+		},
+		{ 	"name": "Lesson 4: Sports",
+			"image": "enter.svg",
+			"id": "quiz4"
+		},
+		{ 	"name": "Lesson 5: Plan A Date",
+			"image": "enter.svg",
+			"id": "quiz5"
+		},
+		{ 	"name": "Lesson 6: Visit the City",
+			"image": "enter.svg",
+			"id": "quiz6"
+		},
+		{ 	"name": "Lesson 7: Shopping and Clothes",
+			"image": "enter.svg",
+			"id": "quiz7"
+		},
+		{ 	"name": "Lesson 8: Popular Music",
+			"image": "enter.svg",
+			"id": "quiz8"
+		} 	
+	], 
+  "oldquizInt":[
+		{ 	"name": "Lesson 0: Sample Completed Quiz",
+			"image": "redo.svg",
+			"id": "quiz0"
+		} 	
+	], "newquizAdv": [
+		{ 	"name": "Lesson 1: Interview for a Job",
+			"image": "enter.svg",
+			"id": "quiz1"
+		},
+		{ 	"name": "Lesson 2: Buy A New House",
+			"image": "enter.svg",
+			"id": "quiz2"
+		} ,
+		{ 	"name": "Lesson 3: Bargaining for Prices",
+			"image": "enter.svg",
+			"id": "quiz3"
+		},
+		{ 	"name": "Lesson 4: Cultural Diversity",
+			"image": "enter.svg",
+			"id": "quiz4"
+		},
+		{ 	"name": "Lesson 5: Spanish Literature",
+			"image": "enter.svg",
+			"id": "quiz5"
+		},
+		{ 	"name": "Lesson 6: Out in Nature",
+			"image": "enter.svg",
+			"id": "quiz6"
+		},
+		{ 	"name": "Lesson 7: My future Plans",
+			"image": "enter.svg",
+			"id": "quiz7"
+		}
+	], 
+  "oldquizAdv":[
+		{ 	"name": "Lesson 0: Sample Completed Quiz",
+			"image": "redo.svg",
+			"id": "quiz0"
+		} 	
 	]
 }

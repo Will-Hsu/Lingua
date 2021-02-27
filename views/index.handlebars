@@ -30,6 +30,7 @@
 <h3 class="toggle">New Lessons</h3>
 <div>
   <div class = "toggle" id="lessons" style="height:280px;width:330px;background-color: white;overflow:auto;">
+    <div id="changequiz">
     {{#each newquiz}}
     <div class="container" id="{{id}}">
       <a href="" onclick="clickOn(event, this)">
@@ -38,6 +39,7 @@
       </a>
     </div>
     {{/each}}
+    </div>
   </div>
 </div>
 
@@ -50,6 +52,21 @@
     <p id="obj"></p>
     <a onClick = "enterLesson(event)"><button type="button" class="btn btn-success">Enter</button></a>
   </div>
+</div>
+
+<br>
+<h3 class="toggle">Completed Lessons</h2>
+<div class = "toggle"style="height:110px;width:330px; background-color: white; overflow:auto;">
+<!--You haven't completed any quizzes!-->
+  {{#each oldquiz}}
+  <div class="container" id="{{id}}">
+    <a href="" onclick="clickOn(event, this)">
+      <img src="/images/{{image}}" style="" alt="enter lesson">
+      <p class="centered">{{name}}</p>
+    </a>
+  </div>
+  {{/each}}
+<br>
 </div>
 
 <script>
@@ -111,24 +128,23 @@
     tempPoints = Math.round((tempPoints + Number.EPSILON ) * 100) / 100;
     console.log(tempPoints);
     document.getElementById("bar").innerHTML = tempPoints + "/40 points"; 
+
+
+    // change the list of lessons shown based on proficiency
+    var prof = localStorage.getItem('proficiency');
+
+    if(prof.toLowerCase() === "intermediate"){
+      var projectHTML = "{{#each newquizInt}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='images/{{image}}' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
+      $("#changequiz").html(projectHTML);
+    }
+    if(prof.toLowerCase() === "advanced"){
+      var projectHTML = "{{#each newquizAdv}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='images/{{image}}' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
+      $("#changequiz").html(projectHTML);
+    }
   };
 
   
 </script>
 
-<br>
-<h3 class="toggle">Completed Lessons</h2>
-<div class = "toggle"style="height:110px;width:330px; background-color: white; overflow:auto;">
-<!--You haven't completed any quizzes!-->
-  {{#each oldquiz}}
-  <div class="container" id="{{id}}">
-    <a href="" onclick="clickOn(event, this)">
-      <img src="/images/{{image}}" style="" alt="enter lesson">
-      <p class="centered">{{name}}</p>
-    </a>
-  </div>
-  {{/each}}
-<br>
-</div>
 </body>
 </html>

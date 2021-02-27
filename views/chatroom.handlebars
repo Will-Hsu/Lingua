@@ -27,7 +27,7 @@
   <div class="container" id="{{name}}">
     <a href=""  onclick="clickOn(event, this)">
       <img src="images/{{image}}" alt="enter lesson">
-      <p class="centered" id="nameChat">{{name}}</p>
+      <p class="centered" id="{{id}}">{{name}}</p>
     </a>
   </div>
   {{/each}}
@@ -84,6 +84,22 @@
     window.location.href = url;
     e.preventDefault();
   }
+  // proficiency specific chatrooms
+  window.onload = (event) => {
+    var prof = localStorage.getItem('proficiency');
+
+    if(prof.toLowerCase() === "intermediate"){
+      $("#beginConv").text("🏫 Intermediate Conversation");
+      $("#beginGram").text("🏫 Intermediate Grammar");
+      $("#beginWriting").text("🏫 Intermediate Vocabulary");
+    }
+    if(prof.toLowerCase() === "advanced"){
+      $("#beginConv").text("🏫 Advanced Conversation");
+      $("#beginGram").text("🏫 Advanced Grammar");
+      $("#beginWriting").text("🏫 Advanced Vocabulary");
+    }
+
+  };
 </script>
 
 </body>
