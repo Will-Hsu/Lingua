@@ -47,5 +47,7 @@ function authfreeLogin(){
     "progress": "0/50",
     "imageURL": "/images/Chris.png"		
   }
+  localStorage.setItem("username", "Chris");
+  localStorage.setItem("userpic", "/images/Chris.png");
   $.post("/user", newMessage, callBackFn);
 }
