@@ -29,7 +29,8 @@ function changeUser(response) {
   }
 
   // local storage needs key, value pair. Takes in only strings
-  //window.localStorage = setItem((response.name).toString(), (response.picture.data.url).toString());
+  localStorage.setItem("username", response.name);
+  localStorage.setItem("userpic", response.picture.data.url);
   
   window.location.href = "/index";
   $.post("/user", newMessage, callBackFn);

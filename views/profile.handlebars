@@ -54,5 +54,12 @@
   <!-- Logout button + pop-up -->
 </div>
 
+<script>
+  window.onload = (event) => {
+    $("#name").text(localStorage.getItem('username'));
+    document.getElementById("profilepic").src = localStorage.getItem('userpic');
+  };
+</script>
+
 </body>
 </html>

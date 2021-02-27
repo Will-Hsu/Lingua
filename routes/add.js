@@ -30,6 +30,7 @@ exports.sendMessage = function(request, response) {
 	data.BeginnerConvChat.push(newMessage);
 	response.render('chat', data);
 	console.log(newMessage);
+    // console.log("hi" + localStorage.getItem('username'));
     //setTimeout(function(){ responseToMessage(newMessage["name"]);}, 1000); // create a one second delay
     //setTimeout(responseToMessage, 1000, newMessage["name"]);
     responseToMessage(newMessage["name"]);
