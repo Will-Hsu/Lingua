@@ -166,6 +166,27 @@
       projectHTML = "{{#each oldquizAdv}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='/images/{{image}}' style='' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
       $("#changequiz2").html(projectHTML);
     }
+
+    // Sets up number of new quizzes and old quizzes for each proficiency
+    var newQuizzes = $("#changeQuiz .container").length;
+    var oldQuizzes = $("#changeQuiz2 .container").length; 
+
+    if(prof.toLowerCase() === "beginner") {
+      localStorage.setItem("newQuizBeg", newQuizzes);
+      localStorage.setItem("oldQuizBeg", oldQuizzes);
+    }
+
+    if(prof.toLowerCase() === "intermediate") {
+      localStorage.setItem("newQuizInt", newQuizzes);
+      localStorage.setItem("oldQuizInt", oldQuizzes);
+    }
+
+    if(prof.toLowerCase() === "advanced") {
+      localStorage.setItem("newQuizAdv", newQuizzes);
+      localStorage.setItem("oldQuizAdv", oldQuizzes);
+    }
+
+    //TODO change white box size here!
   };
 
   

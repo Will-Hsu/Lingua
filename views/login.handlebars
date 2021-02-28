@@ -22,13 +22,6 @@
   </div>
 
 <script>
-// Add lessons in local storage
-for(let i = 0; i < 8; i++) {
-  if(localStorage.getItem('lessons_completed' + i) === null) {
-    localStorage.setItem('lessons_completed' + i, false);
-  }
-}
-
 // Add progress in local storage
 if(localStorage.getItem('progress') === null) {
   localStorage.setItem('progress', 0);
