@@ -74,6 +74,9 @@
 </div>
 
 <script>
+  function finishAdd(){
+    console.log("hi");
+  }
   function clickOn(e, pageName){
     var toggle = document.getElementsByClassName('toggle');
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
@@ -91,9 +94,11 @@
     e.preventDefault();
   }
 
-  var quizNameTemp = document.getElementById("quizName").innerHTML;
+  /*var quizNameTemp = document.getElementById("quizName").innerHTML;
 
+  
   function updateComplete() {
+    console.log("this is called");
     // Create localStorage lessons object to keep track
     let lessonNumber = quizNameTemp.charAt(7);
     if(localStorage.getItem('lessons_completed' + lessonNumber) === "false") {
@@ -101,7 +106,9 @@
     } else if (localStorage.getItem('lessons_completed' + lessonNumber) === null) {
       localStorage.setItem('lessons_completed' + lessonNumber, "true");
     }
-  }
+    $.get(("/done/" + quizNameTemp), finishAdd);
+  }*/
+
 </script>
 
 </body>

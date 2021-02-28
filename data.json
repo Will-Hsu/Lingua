@@ -141,12 +141,7 @@
 			"id": "quiz8"
 		} 	
 	], 
-  "oldquiz":[
-		{ 	"name": "Lesson 0: Sample Completed Quiz",
-			"image": "redo.svg",
-			"id": "quiz0"
-		} 	
-	], "newquizInt": [
+  "oldquiz":[], "newquizInt": [
 		{ 	"name": "Lesson 1: Travel Abroad",
 			"image": "enter.svg",
 			"id": "quiz1"

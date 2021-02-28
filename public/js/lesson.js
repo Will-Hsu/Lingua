@@ -188,6 +188,7 @@ Question.prototype.render = function(container) {
   });
 }
 
+
 $(document).ready(function() {});
 
 function doneQuiz(){
@@ -207,6 +208,10 @@ function doneQuiz(){
     localStorage.setItem('progress', sumPoints.toString());
     console.log(sumPoints);
   }
+  var quizNameTemp = document.getElementById("quizName").innerHTML;
+
+  console.log("this is done " + quizNameTemp);
+  $.get(("/done/" + quizNameTemp), finishAdd);
 }
 
 function startQuiz(e){

@@ -20,6 +20,7 @@ var add = require('./routes/add');
 var addGen = require('./routes/addGen');
 var user = require('./routes/user');
 var proficiency = require('./routes/proficiency');
+var done = require('./routes/done');
 
 
 var app = express();
@@ -55,6 +56,7 @@ app.get('/', login.view);
 app.get('/add', add.sendMessage);
 app.get('/addGen', addGen.sendMessage);
 app.get('/proficiency', proficiency.view);
+app.get('/done/:name', done.view);
 app.post('/user', user.addUser);
 
 
