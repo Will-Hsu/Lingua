@@ -58,6 +58,7 @@
   window.onload = (event) => {
     $("#name").text(localStorage.getItem('username'));
     document.getElementById("profilepic").src = localStorage.getItem('userpic');
+    document.getElementById("level").innerHTML = localStorage.getItem('proficiency');
   };
 </script>
 

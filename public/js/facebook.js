@@ -32,7 +32,7 @@ function changeUser(response) {
   localStorage.setItem("username", response.name);
   localStorage.setItem("userpic", response.picture.data.url);
   
-  window.location.href = "/index";
+  window.location.href = "/proficiency";
   $.post("/user", newMessage, callBackFn);
 }
 

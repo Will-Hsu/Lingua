@@ -36,11 +36,6 @@ window.onclick = function(event) {
   }
 }
 
-// Changes proficiency
-window.onload = (event) => {
-  document.getElementById("level").innerHTML = localStorage.getItem('proficiency');
-};
-
 function updateProfInStorage() {
   let tempProf = localStorage.getItem('proficiency_change');
   localStorage.setItem('proficiency', tempProf);
