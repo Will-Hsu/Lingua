@@ -15,8 +15,8 @@ exports.sendMessage = function(request, response) {
     else n = n + " AM";
 
 	var newMessage = {
-    "name": "Chris",
-    "image": "/images/Chris.png",
+    "name": request.query.username,
+    "image": request.query.userimg,
     "text":	request.query.usermsg,
     "time": n,
     "theme": "darker",
