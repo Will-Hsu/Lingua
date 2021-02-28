@@ -26,19 +26,13 @@
   <div class="main" style="background-color: #f1f1f1; overflow:auto;">
     <!--This is a sample lesson design for "Lesson 1: Introduce Yourself." The other lessons/quizzes would be wizard of oz-->
     <div id="samplelesson" style="text-align:left; margin: 20px; margin-top: 5px">
-      <p style="font-size: 14px; line-height: 15px">Learn how to introduce yourself in Spanish! Familiarize yourself with the following:<br></p>
+      <p id="lessonintro" style="font-size: 14px; line-height: 15px">Learn how to introduce yourself in Spanish! Familiarize yourself with the following:<br></p>
       <h3 style="color: rgb(16, 45, 99); font-size: 15px; margin:5px 0">Common Phrases</h3><br>
-      <ul id="lesson_text">
-        <p><a>◘ Hola! Me llamo Alex.</a> <br>(Hello! My name is Alex)</p>
-        <p><a>◘ Como te llamas?</a> <br>(What is your name?)</p>
-        <p><a>◘ Mi color favorito es el azul.</a> <br>(My favorite color is blue)</p>
-        <p><a>◘ Tengo 15 años.</a> <br>(I am 15 years old)</p>
-        <p><a>◘ Yo estoy feliz.</a> <br>(I am happy.)</p>
-      </ul>
+      <ul id="lesson_text"></ul>
       <p style="font-size: 13px; line-height: 15px; color: rgb(18, 75, 48); margin:0"> Pro-tip: Visit "Chat" in the menu-bar to practice with other learners before taking the quiz! <br>
       <div style="margin: 0 10px; text-align:center;">
-        <img src="/images/hola.jpg" style = "height:23%; margin: 5px 0; margin-bottom: 1px"alt="">
-        <p style="font-size: 10px; margin: 0">Han Vectors by Vecteezy</p><br>
+        <img src="/images/hola.jpg" id="lessonpic" style = "height:23%; margin: 5px 0; margin-bottom: 1px" alt="">
+        <p style="font-size: 10px; margin: 0">Vectors by Vecteezy</p><br>
         <a onclick="startQuiz(event)" class="floated"><button type="button" class="btn btn-success">Start Quiz</button></a>
       </div>
     </div>
@@ -90,6 +84,20 @@
     document.getElementById("popupquiz").style.display = 'none';
     e.preventDefault();
   }
+  window.onload = (event) => {
+    if(parseInt(document.getElementById("title").innerHTML.substring(7, 8)) % 2 != 0){
+      // add content
+      var projectHTML = "<p><a>◘ Hola! Me llamo Alex.</a> <br>(Hello! My name is Alex)</p><p><a>◘ Como te llamas?</a> <br>(What is your name?)</p><p><a>◘ Mi color favorito es el azul.</a> <br>(My favorite color is blue)</p><p><a>◘ Tengo 15 años.</a> <br>(I am 15 years old)</p><p><a>◘ Yo estoy feliz.</a> <br>(I am happy.)</p>";
+      $("#lesson_text").html(projectHTML);
+    }else{
+      // overwrite and add content
+      var projectHTML = "<p><a>◘ Feliz cumpleaños, Alex!</a> <br>(Happy Birthday, Alex!)</p><p><a>◘ ¿Cómo va tu día?</a> <br>(How is your day?)</p><p><a>◘ Soy un(a) estudiante. </a> <br>(I am a student.)</p><p><a>◘ Mucho gusto!</a> <br>(Nice to meet you!)</p><p><a>◘ De dónde eres?</a> <br>(Where are you from?)</p>";
+      $("#lesson_text").html(projectHTML);
+      $("#lessonintro").text("Let's make simple conversation in Spanish! Familiarize yourself with the following:");
+      document.getElementById("lessonpic").src = "/images/convo.jpg"
+    }
+  };
+
 </script>
 
 </body>

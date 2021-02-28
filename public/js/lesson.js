@@ -1,5 +1,5 @@
 // Array of all the questions and choices to populate the questions. This might be saved in some JSON file or a database and we would have to read the data in.
-var all_questions = [ 
+var all_questions1 = [ 
 {
   question_string: "How do you say 'I am happy' in Spanish?",
   choices: {
@@ -37,42 +37,45 @@ var all_questions = [
 
 var all_questions2 = [ 
   {
-    question_string: "How do you say 'I am happy' in Spanish?",
+    question_string: "How do you say 'Happy Birthday.' in Spanish?",
     choices: {
-      correct: "Yo estoy feliz",
-      wrong: ["Yo estoy felix", "Me estoy feliz", "🎄Feliz Navidad"]
+      correct: "Feliz cumpleaños",
+      wrong: ["Feliz cumplaeños", "Feliz iernes", "Feliz año nuevo"]
     }
   },
   {
-    question_string: "How do you say 'My name is' in Spanish?",
+    question_string: "How do you say 'How is your day?' in Spanish?",
     choices: {
-      correct: "Me llamo",
-      wrong: ["Mi perro esta", "El cielo es", "La magia eres"]
+      correct: "¿Cómo va tu día?",
+      wrong: ["¿Cómo te llamas?", "¿Cómo me llamas?", "¿Cómo va mi día?"]
     }
   }, 
   {
-    question_string: "How do you say 'I am 5 years old' in Spanish?",
+    question_string: "How do you say 'I am a student.' in Spanish?",
     choices: {
-      correct: "Tengo 5 años",
-      wrong: ["Tengo 5 año", "Tengo 5 eños", "Mis magias eres 5 eños"]
+      correct: "Soy un(a) estudiante",
+      wrong: ["Soy un(a) estudiente", "Soy un(a) estudio", "Soy un(a) estudie"]
     }
   }, 
   {
-    question_string: "How do you say 'My favorite color is' in Spanish?",
+    question_string: "How do you say 'Nice to meet you!' in Spanish?",
     choices: {
-      correct: "Mi color favorito es",
-      wrong: ["Mi calar favorito es", "La magia es real", "Mi calor favorito es"]
+      correct: "Mucho gusto",
+      wrong: ["Muchas gracias", "Mucho boba", "Mucha color"]
     }
   }, {
-    question_string: "How do you say 'Hello!' in Spanish?",
+    question_string: "How do you say 'Where are you from?' in Spanish?",
     choices: {
-      correct: "Hola!",
-      wrong: ["Mchola!", "Ola!", "Lotion!"]
+      correct: "De dónde eres?",
+      wrong: ["Dónde estás?", "De dónde es?", "Dónde estoy?"]
     }
-  }];
+}];
 
-var correctAnswers = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
-var correctAnswers2 = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
+var all_questions;
+var correctAnswers;
+
+var correctAnswers1 = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
+var correctAnswers2 = ["Feliz cumpleaños", "¿Cómo va tu día?", "Soy un(a) estudiante", "Mucho gusto", "De dónde eres?"];
 var incorrect_points = [];
 var pointavailable = 1;
 var totalPoints = 0;
@@ -259,6 +262,15 @@ function startQuiz(e){
   document.getElementById("quiz").style.display = "block";
   document.getElementById("quiz").style.marginTop = "100px";
   var quiz = new Quiz();
+  
+  var lessonnum = parseInt(document.getElementById("quizName").innerHTML.substring(7, 8));
+  if(lessonnum % 2 != 0){
+    all_questions = all_questions1;
+    correctAnswers = correctAnswers1;
+  }else{
+    all_questions = all_questions2;
+    correctAnswers = correctAnswers2;
+  }
   
   // Create Question objects from all_questions and add them to the Quiz object
   for (var i = 0; i < all_questions.length; i++) {
