@@ -35,7 +35,44 @@ var all_questions = [
   }
 }];
 
+var all_questions2 = [ 
+  {
+    question_string: "How do you say 'I am happy' in Spanish?",
+    choices: {
+      correct: "Yo estoy feliz",
+      wrong: ["Yo estoy felix", "Me estoy feliz", "🎄Feliz Navidad"]
+    }
+  },
+  {
+    question_string: "How do you say 'My name is' in Spanish?",
+    choices: {
+      correct: "Me llamo",
+      wrong: ["Mi perro esta", "El cielo es", "La magia eres"]
+    }
+  }, 
+  {
+    question_string: "How do you say 'I am 5 years old' in Spanish?",
+    choices: {
+      correct: "Tengo 5 años",
+      wrong: ["Tengo 5 año", "Tengo 5 eños", "Mis magias eres 5 eños"]
+    }
+  }, 
+  {
+    question_string: "How do you say 'My favorite color is' in Spanish?",
+    choices: {
+      correct: "Mi color favorito es",
+      wrong: ["Mi calar favorito es", "La magia es real", "Mi calor favorito es"]
+    }
+  }, {
+    question_string: "How do you say 'Hello!' in Spanish?",
+    choices: {
+      correct: "Hola!",
+      wrong: ["Mchola!", "Ola!", "Lotion!"]
+    }
+  }];
+
 var correctAnswers = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
+var correctAnswers2 = ["Yo estoy feliz", "Me llamo", "Tengo 5 años", "Mi color favorito es", "Hola!"];
 var incorrect_points = [];
 var pointavailable = 1;
 var totalPoints = 0;
@@ -214,6 +251,8 @@ function doneQuiz(){
   console.log("this is done " + quizNameTemp);
   $.get(("/done/" + prof + quizNameTemp), finishAdd);
 }
+
+function finishAdd(){}
 
 function startQuiz(e){
   document.getElementById("learningPage").style.display = "none";

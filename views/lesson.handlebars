@@ -61,7 +61,7 @@
     <img src="/images/congrats.svg" style="height: 30%" alt="">
     <p id="quiz-results-score"></p>
     <a href="/lesson/{{lessonname}}"><button id="quiz-retry-button">Retry</button></a>
-    <a href="/index"><button id="quiz-return-button" onclick="updateComplete()">Done</button></a>
+    <a href="/index"><button id="quiz-return-button">Done</button></a>
 </div>
 
 <!--pop up screen to quit-->
@@ -74,9 +74,6 @@
 </div>
 
 <script>
-  function finishAdd(){
-    console.log("hi");
-  }
   function clickOn(e, pageName){
     var toggle = document.getElementsByClassName('toggle');
     for (var i = 0; i < toggle.length; i ++) toggle[i].style.display = 'none';
@@ -93,22 +90,6 @@
     document.getElementById("popupquiz").style.display = 'none';
     e.preventDefault();
   }
-
-  /*var quizNameTemp = document.getElementById("quizName").innerHTML;
-
-  
-  function updateComplete() {
-    console.log("this is called");
-    // Create localStorage lessons object to keep track
-    let lessonNumber = quizNameTemp.charAt(7);
-    if(localStorage.getItem('lessons_completed' + lessonNumber) === "false") {
-      localStorage.setItem('lessons_completed' + lessonNumber, "true");
-    } else if (localStorage.getItem('lessons_completed' + lessonNumber) === null) {
-      localStorage.setItem('lessons_completed' + lessonNumber, "true");
-    }
-    $.get(("/done/" + quizNameTemp), finishAdd);
-  }*/
-
 </script>
 
 </body>
