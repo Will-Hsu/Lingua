@@ -35,3 +35,14 @@ p{
   color: white;
   margin: 5px;
 }
+
+#back {
+  margin-top: 10%;
+  font-size: 12px;
+  background-color: 1A2A37;
+  width: 50px;
+  height: 35px;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
