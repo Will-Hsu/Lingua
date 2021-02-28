@@ -30,12 +30,14 @@
 <h3 class="toggle">New Lessons</h3>
 <div>
   <div class = "toggle" id="lessons" style="height:280px;width:330px;background-color: white;overflow:auto;">
+    <p id="completeAll" style="color: rgb(16, 80, 58); font-size: 12px; margin: 5% 5%; display:none" >Congratulations, you have completed all lesson in this proficiency!</p>
     <div id="changequiz">
     {{#each newquiz}}
     <div class="container" id="{{id}}">
       <a href="" onclick="clickOn(event, this)">
         <img src="images/{{image}}" alt="enter lesson">
         <p class="centered">{{name}}</p>
+        <a hidden class="newQuizDiv"></a>
       </a>
     </div>
     {{/each}}
@@ -56,7 +58,8 @@
 
 <br>
 <h3 class="toggle">Completed Lessons</h2>
-<div class = "toggle"style="height:110px;width:330px; background-color: white; overflow:auto;">
+<div class = "toggle" id="completeLess" style="height:110px;width:330px; background-color: white; overflow:auto;">
+  <p id="nocomplete" style="color: rgb(16, 80, 58); font-size: 12px; margin: 5% 5%;" >You haven't completed any lesson! Let's start learning.</p>
 <!--You haven't completed any quizzes!-->
   <div id="changequiz2">
   {{#each oldquiz}}
@@ -64,6 +67,7 @@
     <a href="" onclick="clickOn(event, this)">
       <img src="/images/{{image}}" style="" alt="enter lesson">
       <p class="centered">{{name}}</p>
+      <a hidden class="oldquizDiv"></a>
     </a>
   </div>
   {{/each}}
@@ -97,8 +101,23 @@
     e.preventDefault();
   }
 
+  function adjustSize(){
+    var oldquizCount = document.getElementsByClassName("oldquizDiv");
+    var newquizCount = document.getElementsByClassName("newQuizDiv");
+    console.log('hey', oldquizCount.length);
+    console.log('hey2', newquizCount.length);
+    if(oldquizCount.length > 0) document.getElementById("nocomplete").style.display = 'none';
+    if(oldquizCount.length > 3){
+      var completelen = (110 + (oldquizCount.length - 3) * 45);
+      document.getElementById('completeLess').style.height = completelen;
+      document.getElementById('lessons').style.height = (280 + 110 - completelen);
+    }
+    if(newquizCount == 0) document.getElementById('completeAll').style.display = 'block';
+  }
+
   // checks proficiency, progress, and completed quizzes on window load
   window.onload = (event) => {
+    // adjustSize(); // work in progress
 
     // Upgrade proficiency if points are met
     let tempPoints = parseFloat(localStorage.getItem('progress'));
