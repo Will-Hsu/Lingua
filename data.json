@@ -175,12 +175,7 @@
 			"id": "quiz8"
 		} 	
 	], 
-  "oldquizInt":[
-		{ 	"name": "Lesson 0: Sample Completed Quiz",
-			"image": "redo.svg",
-			"id": "quiz0"
-		} 	
-	], "newquizAdv": [
+  "oldquizInt":[], "newquizAdv": [
 		{ 	"name": "Lesson 1: Interview for a Job",
 			"image": "enter.svg",
 			"id": "quiz1"
@@ -210,10 +205,5 @@
 			"id": "quiz7"
 		}
 	], 
-  "oldquizAdv":[
-		{ 	"name": "Lesson 0: Sample Completed Quiz",
-			"image": "redo.svg",
-			"id": "quiz0"
-		} 	
-	]
+  "oldquizAdv":[]
 }

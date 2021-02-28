@@ -58,6 +58,7 @@
 <h3 class="toggle">Completed Lessons</h2>
 <div class = "toggle"style="height:110px;width:330px; background-color: white; overflow:auto;">
 <!--You haven't completed any quizzes!-->
+  <div id="changequiz2">
   {{#each oldquiz}}
   <div class="container" id="{{id}}">
     <a href="" onclick="clickOn(event, this)">
@@ -66,6 +67,7 @@
     </a>
   </div>
   {{/each}}
+  </div>
 <br>
 </div>
 
@@ -136,10 +138,14 @@
     if(prof.toLowerCase() === "intermediate"){
       var projectHTML = "{{#each newquizInt}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='images/{{image}}' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
       $("#changequiz").html(projectHTML);
+      projectHTML = "{{#each oldquizInt}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='/images/{{image}}' style='' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
+      $("#changequiz2").html(projectHTML);
     }
     if(prof.toLowerCase() === "advanced"){
       var projectHTML = "{{#each newquizAdv}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='images/{{image}}' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
       $("#changequiz").html(projectHTML);
+      projectHTML = "{{#each oldquizAdv}}<div class='container' id='{{id}}'><a href='' onclick='clickOn(event, this)'><img src='/images/{{image}}' style='' alt='enter lesson'><p class='centered'>{{name}}</p></a></div>{{/each}}";
+      $("#changequiz2").html(projectHTML);
     }
   };
 
