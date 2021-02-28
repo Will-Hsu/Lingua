@@ -9,4 +9,13 @@ exports.view = function(request, response) {
         "id": "quizcompleted"
     }
     data.oldquiz.push(completed);
+    console.log(data.newquiz);
+
+    for(var i = 0; i < data.newquiz.length; i++) {
+        var obj = data.newquiz[i];
+        if(obj.name === name)
+            data.newquiz.splice(i, 1);
+    }
+    
+    console.log(data.newquiz);
 }
