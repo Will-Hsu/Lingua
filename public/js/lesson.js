@@ -209,9 +209,10 @@ function doneQuiz(){
     console.log(sumPoints);
   }
   var quizNameTemp = document.getElementById("quizName").innerHTML;
+  var prof = localStorage.getItem('proficiency');
 
   console.log("this is done " + quizNameTemp);
-  $.get(("/done/" + quizNameTemp), finishAdd);
+  $.get(("/done/" + prof + quizNameTemp), finishAdd);
 }
 
 function startQuiz(e){

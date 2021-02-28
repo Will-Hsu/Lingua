@@ -2,20 +2,38 @@ var data = require("../data.json");
 
 exports.view = function(request, response) {   
     var name = request.params.name;
+    var newquizdatabase;
+    var oldquizdatabase;
+
+    if(name.substring(0, 8).toLowerCase() === "beginner"){
+        newquizdatabase = data.newquiz;
+        oldquizdatabase = data.oldquiz;
+        name = name.substring(8);
+    }
+    else if(name.substring(0, 12).toLowerCase() === "intermediate"){
+        newquizdatabase = data.newquizInt;
+        oldquizdatabase = data.oldquizInt;
+        name = name.substring(12);
+    }else{
+        newquizdatabase = data.newquizAdv;
+        oldquizdatabase = data.oldquizAdv;
+        name = name.substring(8);
+    }
+
     console.log("this is the name " + name);
     var completed = {
         "name": name,
         "image": "redo.svg",
         "id": "quizcompleted"
     }
-    data.oldquiz.push(completed);
-    console.log(data.newquiz);
+    oldquizdatabase.push(completed);
+    //console.log(newquizdatabase);
 
-    for(var i = 0; i < data.newquiz.length; i++) {
-        var obj = data.newquiz[i];
+    for(var i = 0; i < newquizdatabase.length; i++) {
+        var obj = newquizdatabase[i];
         if(obj.name === name)
-            data.newquiz.splice(i, 1);
+            newquizdatabase.splice(i, 1);
     }
-    
-    console.log(data.newquiz);
+
+    //console.log(newquizdatabase);
 }
