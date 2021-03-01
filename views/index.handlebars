@@ -102,13 +102,21 @@
   }
 
   function adjustSize(){
-    var oldquizCount = document.getElementsByClassName("oldquizDiv");
-    var newquizCount = document.getElementsByClassName("newQuizDiv");
-    console.log('hey', oldquizCount.length);
-    console.log('hey2', newquizCount.length);
-    if(oldquizCount.length > 0) document.getElementById("nocomplete").style.display = 'none';
-    if(oldquizCount.length > 3){
-      var completelen = (110 + (oldquizCount.length - 3) * 45);
+    var prof = localStorage.getItem('proficiency').toLowerCase();
+    if(prof === "beginner"){
+      var oldquizCount = parseInt(localStorage.getItem('oldQuizBeg'));
+      var newquizCount = parseInt(localStorage.getItem('newQuizBeg'));
+    }else if(prof === "intermediate"){
+      var oldquizCount = parseInt(localStorage.getItem('oldQuizInt'));
+      var newquizCount = parseInt(localStorage.getItem('newQuizInt'));
+    }else{
+      var oldquizCount = parseInt(localStorage.getItem('oldQuizAdv'));
+      var newquizCount = parseInt(localStorage.getItem('newQuizAdv'));
+    }
+
+    if(oldquizCount > 0) document.getElementById("nocomplete").style.display = 'none';
+    if(oldquizCount > 3){
+      var completelen = (110 + (oldquizCount - 3) * 45);
       document.getElementById('completeLess').style.height = completelen;
       document.getElementById('lessons').style.height = (280 + 110 - completelen);
     }
@@ -117,8 +125,6 @@
 
   // checks proficiency, progress, and completed quizzes on window load
   window.onload = (event) => {
-    // adjustSize(); // work in progress
-
     // Upgrade proficiency if points are met
     let tempPoints = parseFloat(localStorage.getItem('progress'));
     let proficiency = localStorage.getItem('proficiency');
@@ -187,6 +193,7 @@
     }
 
     //TODO change white box size here!
+    adjustSize(); // work in progress
   };
 
   
