@@ -103,7 +103,6 @@ Quiz.prototype.render = function(container) {
   function change_question() {
     self.questions[current_question_index].render(question_container);
     pointavailable = 1;
-    console.log("total points: " + totalPoints);
     document.getElementById("ptpossible").innerHTML = "Points Possible: " + 1/pointavailable;
     document.getElementById("ptearned").innerHTML = "Points Earned: " + totalPoints;
   }
@@ -123,7 +122,7 @@ Quiz.prototype.render = function(container) {
         totalPoints += 1/pointavailable;
         //rounds to 2 decimals
         totalPoints = Math.round((totalPoints + Number.EPSILON) * 100) / 100;
-        if(++current_question_index < 5) setTimeout(function(){ change_question();}, 1000);
+        if(++current_question_index < 5) setTimeout(function(){ change_question();}, 1500);
         else doneQuiz();
         pointavailable = 1;
         document.getElementById("invalid_choice").innerHTML = "";
@@ -135,12 +134,9 @@ Quiz.prototype.render = function(container) {
           // Rounding (up) to 2 decimal places
           let mathTemp = Math.round(((1/pointavailable) + Number.EPSILON) * 100) / 100;
           document.getElementById("ptpossible").innerHTML = "Points Possible: " + mathTemp;
-          //console.log("chose incorrect");
         }
         else {
-          //console.log("pop up notification that incorrect");
           document.getElementById("invalid_choice").innerHTML = "<span style='color: red; clear:left;'>" + "Please choose another selection" + "</span>";
-
         }
       }
     }
@@ -246,12 +242,21 @@ function doneQuiz(){
     localStorage.setItem('progress_earned', totalPoints.toString());
     sumPoints = parseFloat(localStorage.getItem('progress')) + totalPoints;
     localStorage.setItem('progress', sumPoints.toString());
-    console.log(sumPoints);
   }
   var quizNameTemp = document.getElementById("quizName").innerHTML;
   var prof = localStorage.getItem('proficiency');
+  console.log(quizNameTemp);
+  console.log(totalPoints);
 
-  console.log("this is done " + quizNameTemp);
+  // Check if current score is greater than original score
+  if(localStorage.getItem(quizNameTemp) === null ) {
+    localStorage.setItem(quizNameTemp, totalPoints.toString());
+  } else {
+    if( totalPoints > parseInt(localStorage.getItem(quizNameTemp))) {
+      localStorage.setItem(quizNameTemp, totalPoints.toString());
+    }
+  }
+  
   $.get(("/done/" + prof + quizNameTemp), finishAdd);
 }
 

@@ -20,20 +20,16 @@ exports.view = function(request, response) {
         name = name.substring(8);
     }
 
-    console.log("this is the name " + name);
     var completed = {
         "name": name,
         "image": "redo.svg",
         "id": "quizcompleted"
     }
     oldquizdatabase.push(completed);
-    //console.log(newquizdatabase);
 
     for(var i = 0; i < newquizdatabase.length; i++) {
         var obj = newquizdatabase[i];
         if(obj.name === name)
             newquizdatabase.splice(i, 1);
     }
-
-    //console.log(newquizdatabase);
 }

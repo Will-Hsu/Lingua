@@ -11,7 +11,7 @@
 <body>
 
 <ul>
-  <li id="logo"><a><img src="/images/logo.svg" class="img-responsive"></a></li>
+  <li id="logo"><a href="/index"><img src="/images/logo.svg" class="img-responsive"></a></li>
   <li><a><img src="/images/learn_fill.svg" class="img-responsive"></a></li>
   <li><a href="/chatroom"><img src="/images/chat.svg" class="img-responsive"></a></li>
   <li><a href="/help"><img src="/images/help.svg" class="img-responsive"></a></li>
@@ -96,7 +96,6 @@
   }
   function enterLesson(e){
     var url = "/lesson/" + document.getElementById("title").innerHTML + document.getElementById("title2").innerHTML ;
-    console.log(url);
     window.location.href = url;
     e.preventDefault();
   }
@@ -137,10 +136,8 @@
       }
 
       tempPoints = tempPoints - 40;
-      console.log("tempPoints are: " + tempPoints);
       localStorage.setItem('progress_earned', 0);
       localStorage.setItem('progress', tempPoints);
-      console.log("progress is now: " + localStorage.getItem('progress'));
     } 
 
     //proficiency
@@ -153,7 +150,6 @@
 
     //Rounds the points
     tempPoints = Math.round((tempPoints + Number.EPSILON ) * 100) / 100;
-    console.log(tempPoints);
     document.getElementById("bar").innerHTML = tempPoints + "/40 points"; 
 
 
@@ -192,8 +188,8 @@
       localStorage.setItem("oldQuizAdv", oldQuizzes);
     }
 
-    //TODO change white box size here!
     adjustSize(); // work in progress
+
   };
 
   

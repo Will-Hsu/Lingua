@@ -8,7 +8,6 @@ exports.sendMessage = function(request, response) {
     var chat = request.query.chattype;
     var name = request.url;
 
-    console.log(name);
     var d = new Date();
     var n = d.toTimeString().substring(0, 5);
 
@@ -33,7 +32,6 @@ exports.sendMessage = function(request, response) {
         }
         data.FoodChat.push(newMessage);
         response.render('chat', data);
-        console.log(newMessage);
     
         responseToMessageGen(newMessage["name"]);
     }
@@ -49,8 +47,6 @@ exports.sendMessage = function(request, response) {
         }
         data.BeginnerConvChat.push(newMessage);
         response.render('chat', data);
-        console.log(newMessage);
-
         responseToMessage(newMessage["name"]);
     }
 }
@@ -107,7 +103,6 @@ function responseToMessage(nameInput){
         "timePos": "time-right"
     }
     data.BeginnerConvChat.push(newMessage);
-    console.log(newMessage);
 }
 
 function responseToMessageGen(nameInput){
@@ -161,5 +156,4 @@ function responseToMessageGen(nameInput){
         "timePos": "time-right"
     }
     data.FoodChat.push(newMessage);
-    console.log(newMessage);
 }

@@ -35,6 +35,20 @@ if(localStorage.getItem('progress_earned') === null) {
 if(localStorage.getItem('proficiency') === null) {
   localStorage.setItem('proficiency', 'beginner');
 }
+
+// Set points to 0 for each lesson in local storage
+let begArray = ["Lesson 1: Introduce Yourself","Lesson 2: Start a Conversation","Lesson 3: At a Restaurant","Lesson 4: At an Airport","Lesson 5: At Public Transportation","Lesson 6: At a Supermarket","Lesson 7: At a School","Lesson 8: At a Party"];
+let intArray = ["Lesson 1: Travel Abroad","Lesson 2: My Family Members","Lesson 3: Watch A Movie","Lesson 4: Sports","Lesson 5: Plan A Date","Lesson 6: Visit the City","Lesson 7: Shopping and Clothes","Lesson 8: Popular Music"];
+let advArray = ["Lesson 1: Interview for a Job","Lesson 2: Buy A New House","Lesson 3: Bargaining for Prices","Lesson 4: Cultural Diversity","Lesson 5: Spanish Literature","Lesson 6: Out in Nature","Lesson 7: My future Plans"];
+for(let i = 0; i < begArray.length; i++) {
+  localStorage.setItem(begArray[i], 0);
+  localStorage.setItem(intArray[i], 0);
+
+  if(i < 7 ) {
+    localStorage.setItem(advArray[i], 0);
+  }
+}
+
 </script>
 </body>
 </html>

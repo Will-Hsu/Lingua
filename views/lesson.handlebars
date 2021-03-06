@@ -13,7 +13,7 @@
 <body>
 
 <ul>
-  <li id="logo"><a><img src="/images/logo.svg" class="img-responsive"></a></li>
+  <li id="logo"><a href="/index" onclick= "clickOn(event, 'index')"><img src="/images/logo.svg" class="img-responsive"></a></li>
   <li><a href="/index" onclick= "clickOn(event, 'index')"><img src="/images/learn_fill.svg" class="img-responsive"></a></li>
   <li><a href="/chatroom" onclick= "clickOn(event, 'chatroom')"><img src="/images/chat.svg" class="img-responsive"></a></li>
   <li><a href="/help" onclick= "clickOn(event, 'help')"><img src="/images/help.svg" class="img-responsive"></a></li>
@@ -61,7 +61,7 @@
 <!--pop up screen to quit-->
 <div id="popupquiz" style="left:6%">
   <div id="innerquiz">
-    <h4 style='color:#911906; font-size: 15px; margin: 25px 20px'>Are you sure you want to quit? <br> You will loose all your progress and points earned!</h4><br>
+    <h4 style='color:#911906; font-size: 15px; margin: 25px 20px'>Are you sure you want to quit? <br> You will lose all your progress and points earned!</h4><br>
     <a href="/index" class="floated" id="quitMe"><button type="button" class="btn btn-success" style="margin-left: 10px;" id="changeProf1">Confirm</button></a>
     <a onclick="clickOff(event)"class="floated"><button type="button" class="btn btn-light" id="changeProf2">Cancel</button></a>  
   </div>
