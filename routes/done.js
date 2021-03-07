@@ -25,7 +25,14 @@ exports.view = function(request, response) {
         "image": "redo.svg",
         "id": "quizcompleted"
     }
-    oldquizdatabase.push(completed);
+    var alreadyCompleted = false;
+    for(var i = 0; i < oldquizdatabase.length; i++) {
+        var obj = oldquizdatabase[i];
+        if(obj.name === name)
+            alreadyCompleted = true;
+    }
+    if(!alreadyCompleted)
+        oldquizdatabase.push(completed);
 
     for(var i = 0; i < newquizdatabase.length; i++) {
         var obj = newquizdatabase[i];
