@@ -28,8 +28,8 @@
 </div>
 
 <div id="levelChat" style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%; display:none">
-	<form role="form" method="get" action="/add" style="margin: 10px 0px;">
-    <form name="message" role="form" method="get" action="/add">
+	<form role="form" method="get" action="/add" style="margin: 10px 0px;" autocomplete="off">
+    <form name="message" role="form" method="get" action="/add" autocomplete="off">
       <input name="usermsg" type="text" style="width: 80%;" id="usermsg" placeholder="Chat message" maxlength = "60" required/>
       <input type="hidden" name="chattype" value="level" />
       <input type="hidden" name="username" id= "username" value="" />
@@ -41,8 +41,8 @@
 </div>
 
 <div id="genChat" style="background-color: #333333; overflow:auto; margin-left: 5%; margin-right: 5%; padding: 3% 5%; display:none">
-	<form role="form" method="get" action="/add" style="margin: 10px 0px;">
-    <form name="message" role="form" method="get" action="/add">
+	<form role="form" method="get" action="/add" style="margin: 10px 0px;" autocomplete="off">
+    <form name="message" role="form" method="get" action="/add" autocomplete="off">
       <input name="usermsg" type="text" style="width: 80%;" id="usermsg" placeholder="Chat message" maxlength = "60" required/>
       <input type="hidden" name="chattype" value="general" />
       <input type="hidden" name="username" id= "username2" value="" />
